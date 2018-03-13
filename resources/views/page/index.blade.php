@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
     <link href="/css/landing.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <div class="fullwidthbanner-container">
         <div class="fullwidthbanner">
             <div class="bannercontainer">
@@ -47,7 +48,7 @@
                     <div class="col-sm-12">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-8">
-                            <ul class="nav nav-tabs">
+                            <ul class="nav nav-tabs nav-type">
                                 <li class="active"><a data-toggle="tab" href="#all">Tất cả</a></li>
                                 <li><a data-toggle="tab" href="#menu1">Xe tay ga</a></li>
                                 <li><a data-toggle="tab" href="#menu2">Xe số</a></li>
@@ -61,9 +62,8 @@
                                     @if ($newProduct)
                                         @foreach ($newProduct as $new)
                                             <div class="item content-loai-xe-364" style="display: inline-block;">
-                                                <a href="javascript: void(0);"><img class="hover-me"
-                                                                                    src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}"
-                                                                                    alt="Air Blade 125cc"></a>
+                                                <a href="javascript: void(0);">
+                                                    <img class="hover-me" src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}" alt="Air Blade 125cc"></a>
                                                 <div class="desc">
                                                     <p class="name">{{$new->name}}</p>
                                                     <p class="price">Giá từ<span> {{$new->price}} VNĐ</span></p>
@@ -199,7 +199,3 @@
         </div>
     </div>
 @endsection
-
-<script>
-
-</script>

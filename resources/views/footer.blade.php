@@ -33,25 +33,35 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container footer-bottom">
         <div class="row">
             <div class="col-sm-3">
-                <div class="widget">
-                    <h4 class="widget-title">Instagram Feed</h4>
-                    <div id="beta-instagram-feed"><div></div></div>
-                </div>
+                <img src="source/assets/dest/images/logo-footer.png">
             </div>
             <div class="col-sm-2">
                 <div class="widget">
-                    <h4 class="widget-title">Information</h4>
+                    <h4 class="widget-title">Sản phẩm</h4>
                     <div>
                         <ul>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Xe tay ga</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Xe số</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Xe côn tay</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Phụ kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="widget">
+                    <h4 class="widget-title">PHỤ TÙNG</h4>
+                    <div>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Phụ tùng chính hiệu</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Kiến thức phụ tùng</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Tin tức phụ tùng</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Trang phục</a></li>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i> Mũ bảo hiểm</a></li>
                         </ul>
                     </div>
                 </div>
@@ -63,20 +73,11 @@
                         <div>
                             <div class="contact-info">
                                 <i class="fa fa-map-marker"></i>
-                                <p>30 South Park Avenue San Francisco, CA 94108 Phone: +78 123 456 78</p>
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+                                <p>Level 19, 85 Vũ Trọng Phụng</p>
+                                <p>Phone: +84 164 651 8107</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="widget">
-                    <h4 class="widget-title">Newsletter Subscribe</h4>
-                    <form action="#" method="post">
-                        <input type="email" name="your_email">
-                        <button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
-                    </form>
                 </div>
             </div>
         </div> <!-- .row -->
@@ -84,12 +85,10 @@
 </div> <!-- #footer -->
 <div class="copyright">
     <div class="container">
-        <p class="pull-left">Privacy policy. (&copy;) 2014</p>
+        <p class="pull-left">Copyright. &copy; 2018</p>
         <p class="pull-right pay-options">
-            <a href="#"><img src="source/assets/dest/images/pay/master.jpg" alt="" /></a>
-            <a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
-            <a href="#"><img src="source/assets/dest/images/pay/visa.jpg" alt="" /></a>
-            <a href="#"><img src="source/assets/dest/images/pay/paypal.jpg" alt="" /></a>
+            <a href="#"><img src="source/assets/dest/images/icons/facebook.png" alt="" /></a>
+            <a href="#"><img src="source/assets/dest/images/icons/youtube.png" alt="" /></a>
         </p>
         <div class="clearfix"></div>
     </div> <!-- .container -->

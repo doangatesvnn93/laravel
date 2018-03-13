@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel </title>
+    <title>Website bán xe máy </title>
+    <link rel="shortcut icon" type="image/png" href="source/assets/dest/images/favicon.png"/>
+    <meta name="description" content="Website bán xe máy Honda">
+    <meta name="keywords" content="honda,xemay,xetayga,xeso,phukienxemay">
+    <meta name="author" content="DoanGates | 01646518107">
     <base hrer="{{asset('')}}">
     <link href='https://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -14,7 +18,7 @@
     <link rel="stylesheet" href="source/assets/dest/rs-plugin/css/responsive.css">
     <link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
     <link rel="stylesheet" href="source/assets/dest/css/animate.css">
-    <link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+    <link rel="stylesheet" title="style" href="source/assets/dest/css/custom.css">
 </head>
 <body id="show-sp">
 <!-- #header -->
