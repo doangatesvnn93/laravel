@@ -21,13 +21,17 @@
 
                 <div class="row">
                     <div class="col-sm-4">
-                        <img src="source/assets/dest/images/products/6.jpg" alt="">
+                        @if ($productData)
+                                <img src="/source/images/products/{{$productData->avatar}}" alt="">
+                            @else
+                                <img src="/source/assets/dest/images/products/6.jpg" alt="">
+                        @endif
                     </div>
                     <div class="col-sm-8">
                         <div class="single-item-body">
-                            <p class="single-item-title">Sample Woman Top</p>
+                            <p class="single-item-title">{{$productData->name}}</p>
                             <p class="single-item-price">
-                                <span>$34.55</span>
+                                <strong>{{number_format($productData->price)}}đ</strong>
                             </p>
                         </div>
 
@@ -35,7 +39,7 @@
                         <div class="space20">&nbsp;</div>
 
                         <div class="single-item-desc">
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ms id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+                            <p>{{$productData->description}}</p>
                         </div>
                         <div class="space20">&nbsp;</div>
 
@@ -94,7 +98,7 @@
                         <div class="col-sm-4">
                             <div class="single-item">
                                 <div class="single-item-header">
-                                    <a href="product.html"><img src="source/assets/dest/images/products/4.jpg" alt=""></a>
+                                    <a href="product.html"><img src="/source/assets/dest/images/products/4.jpg" alt=""></a>
                                 </div>
                                 <div class="single-item-body">
                                     <p class="single-item-title">Sample Woman Top</p>
@@ -112,7 +116,7 @@
                         <div class="col-sm-4">
                             <div class="single-item">
                                 <div class="single-item-header">
-                                    <a href="product.html"><img src="source/assets/dest/images/products/5.jpg" alt=""></a>
+                                    <a href="product.html"><img src="/source/assets/dest/images/products/5.jpg" alt=""></a>
                                 </div>
                                 <div class="single-item-body">
                                     <p class="single-item-title">Sample Woman Top</p>
@@ -132,7 +136,7 @@
                                 <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 
                                 <div class="single-item-header">
-                                    <a href="#"><img src="source/assets/dest/images/products/6.jpg" alt=""></a>
+                                    <a href="#"><img src="/source/assets/dest/images/products/6.jpg" alt=""></a>
                                 </div>
                                 <div class="single-item-body">
                                     <p class="single-item-title">Sample Woman Top</p>
@@ -157,28 +161,28 @@
                     <div class="widget-body">
                         <div class="beta-sales beta-lists">
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/1.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/2.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/3.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/4.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
@@ -192,28 +196,28 @@
                     <div class="widget-body">
                         <div class="beta-sales beta-lists">
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/1.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/2.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/3.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="/source/assets/dest/images/products/sales/4.png" alt=""></a>
                                 <div class="media-body">
                                     Sample Woman Top
                                     <span class="beta-sales-price">$34.55</span>

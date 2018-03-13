@@ -95,6 +95,10 @@
     font-weight: normal;
 }
 
+#show-sp .show-sp-pc .tabs-content .item .item-hovered .more .price strong {
+    font-weight: 700;
+}
+
 #show-sp .show-sp-pc .tabs-content .item .item-hovered .more .btn img {
     width: 51%;
 }

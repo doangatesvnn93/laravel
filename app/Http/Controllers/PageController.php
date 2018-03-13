@@ -4,27 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Slide;
+use App\ProductType;
 use Illuminate\Http\Request;
+use DB;
 
-class PageController extends Controller
+class PageController extends InitController
 {
     public function index()
     {
         $listSlide = Slide::all();
-        $newProduct = Product::where('new', 1)->paginate(8, ['*'], 'new');
-        $saleProduct = Product::where('price_sale', '<>', 0)->paginate(4, ['*'], 'sale');
+        $listProduct = Product::get();
+        $listCategory = ProductType::get();
         $data = [
             'listSlide'     => $listSlide,
-            'newProduct'    => $newProduct,
-            'saleProduct'   => $saleProduct
+            'listProduct'    => $listProduct,
+            'listCategory'   => $listCategory
         ];
 
         return view('page.index', $data);
     }
 
-    public function detail()
+    public function detail($slug)
     {
-        return view('page.detail');
+        $productData = DB::table('g_products')->where('slug', $slug)->first();
+        //$productData = Product::where('slug', $slug)->first;
+        $data = [
+            'productData'     => $productData
+        ];
+        return view('page.detail', $data);
     }
 
     public function list()

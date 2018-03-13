@@ -4,7 +4,7 @@
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
                     <li><div class="pull-left">
-                            <a href="index.html" id="logo"><img src="source/assets/dest/images/logo.png" width="200px" alt=""></a>
+                            <a href="{{route('landing')}}" id="logo"><img src="/source/assets/dest/images/logo.png" width="200px" alt=""></a>
                         </div>
                     </li>
                 </ul>
@@ -26,7 +26,7 @@
                                 <div class="beta-dropdown cart-body">
                                     <div class="cart-item">
                                         <div class="media">
-                                            <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/1.png" alt=""></a>
+                                            <a class="pull-left" href="#"><img src="/source/assets/dest/images/products/cart/1.png" alt=""></a>
                                             <div class="media-body">
                                                 <span class="cart-item-title">Sample Woman Top</span>
                                                 <span class="cart-item-options">Size: XS; Colar: Navy</span>
@@ -37,7 +37,7 @@
 
                                     <div class="cart-item">
                                         <div class="media">
-                                            <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/2.png" alt=""></a>
+                                            <a class="pull-left" href="#"><img src="/source/assets/dest/images/products/cart/2.png" alt=""></a>
                                             <div class="media-body">
                                                 <span class="cart-item-title">Sample Woman Top</span>
                                                 <span class="cart-item-options">Size: XS; Colar: Navy</span>
@@ -48,7 +48,7 @@
 
                                     <div class="cart-item">
                                         <div class="media">
-                                            <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/3.png" alt=""></a>
+                                            <a class="pull-left" href="#"><img src="/source/assets/dest/images/products/cart/3.png" alt=""></a>
                                             <div class="media-body">
                                                 <span class="cart-item-title">Sample Woman Top</span>
                                                 <span class="cart-item-options">Size: XS; Colar: Navy</span>
@@ -149,92 +149,34 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu">
                 <ul class="l-inline ov">
-                    <li class="@if (Route::currentRouteName() == 'trang-chu')active @endif"><a href="#" >Trang chủ</a></li>
+                    <li class="@if (Route::currentRouteName() == 'landing')active @endif"><a href="{{route('landing')}}" >Trang chủ</a></li>
                     <li id="header-list-product">
                         <a href="#">Sản phẩm</a>
                         <div class="menu-sanpham">
                             <div class="center-content">
+                                @if ($listCategory)
+                                    @foreach($listCategory as $cat)
+                                        <div class="item-wrp">
+                                            <p class="type">{{$cat->name}}</p>
+                                            @if ($listProduct)
+                                                @foreach($listProduct as $item)
 
+                                                    @if ($item->category_id == $cat->id)
+                                                        <div class="item">
+                                                            <a href="{{route('detail', ['slug' => $item->slug])}}">
+                                                                <img class="hover-me"
+                                                                     src="/source/images/products/{{$item->avatar ? $item->avatar : ""}}"
+                                                                     alt="{{$item->name}}">
+                                                            </a>
+                                                            <p class="name">{{$item->name}}</p>
+                                                        </div>
+                                                    @endif
 
-                                <div class="item-wrp">
-                                    <p class="type">XE TAY GA</p>
-                                    @if ($newProduct)
-                                        @foreach ($newProduct as $item)
-                                            <div class="item">
-                                                <a href="#">
-                                                    <img class="hover-me" src="/source/images/products/{{$item->avatar ? $item->avatar : ""}}" alt="{{$item->name}}"></a>
-                                                </a>
-                                                <p class="name">{{$item->name}}</p>
-                                            </div>
-                                        @endforeach
-                                    @endif
-                                </div>
-
-
-                                <div class="item-wrp">
-                                    <p class="type">XE SỐ</p>
-                                    <div class="item">
-                                        <a href="https://hondaxemay.com.vn/san-pham/blade-110cc/">
-                                            <img src="https://hondaxemay.com.vn/wp-content/uploads/2017/12/Hình-Đại-Diện-145x95-_145x95_acf_cropped.png" alt="Blade 110cc">
-                                        </a>
-
-                                        <p class="name">Blade 110cc</p>
-                                    </div>
-
-
-                                    <div class="item">
-                                        <a href="https://hondaxemay.com.vn/san-pham/wave-alpha-110cc/">
-                                            <img src="https://hondaxemay.com.vn/wp-content/uploads/2017/12/Products-145x95-white_145x95_acf_cropped.png" alt="Wave Alpha 110cc">
-                                        </a>
-
-                                        <p class="name">Wave Alpha 110cc</p>
-                                    </div>
-
-
-                                    <div class="item">
-                                        <a href="https://hondaxemay.com.vn/san-pham/wave-rsx-fi-110cc/">
-                                            <img src="https://hondaxemay.com.vn/wp-content/uploads/2017/11/hinhxe_145x95_145x95_acf_cropped.png" alt="Wave RSX FI 110cc">
-                                        </a>
-
-                                        <p class="name">Wave RSX FI 110cc</p>
-                                    </div>
-
-
-                                    <div class="item">
-                                        <a href="https://hondaxemay.com.vn/san-pham/future-125cc/">
-                                            <img src="https://hondaxemay.com.vn/wp-content/uploads/2016/03/Hinh-dai-dien-145x95-2.png" alt="Future 125cc">
-                                        </a>
-
-                                        <p class="name">Future 125cc</p>
-                                    </div>
-
-
-                                </div>
-
-
-                                <div class="item-wrp">
-                                    <p class="type">XE CÔN TAY</p>
-                                    <div class="item">
-                                        <a href="https://hondaxemay.com.vn/san-pham/winner-150cc/">
-                                            <img src="https://hondaxemay.com.vn/wp-content/uploads/2017/11/145x95_145x95_acf_cropped.png" alt="WINNER 150cc">
-                                        </a>
-
-                                        <p class="name">WINNER 150cc</p>
-                                    </div>
-
-
-                                    <div class="item">
-                                        <a href="https://hondaxemay.com.vn/san-pham/msx-125cc/">
-                                            <img src="https://hondaxemay.com.vn/wp-content/uploads/2017/05/JPEG_Red-FA-145x95.jpg" alt="MSX 125cc">
-                                        </a>
-
-                                        <p class="name">MSX 125cc</p>
-                                    </div>
-
-
-                                </div>
-
-
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </li>

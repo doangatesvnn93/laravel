@@ -1,7 +1,5 @@
 @extends('master')
 @section('content')
-    <link href="/css/landing.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <div class="fullwidthbanner-container">
         <div class="fullwidthbanner">
             <div class="bannercontainer">
@@ -50,23 +48,25 @@
                         <div class="col-sm-8">
                             <ul class="nav nav-tabs nav-type">
                                 <li class="active"><a data-toggle="tab" href="#all">Tất cả</a></li>
-                                <li><a data-toggle="tab" href="#menu1">Xe tay ga</a></li>
-                                <li><a data-toggle="tab" href="#menu2">Xe số</a></li>
-                                <li><a data-toggle="tab" href="#menu2">Xe côn tay</a></li>
+                                @if ($listCategory)
+                                    @foreach($listCategory as $cat)
+                                        <li><a data-toggle="tab" href="#menu{{$cat->id}}">{{$cat->name}}</a></li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </div>
                         <div class="col-sm-2"></div>
                         <div class="col-sm-12 row show-sp-pc">
                             <div class="tab-content tabs-content clearfix">
                                 <div id="all" class="tab-pane fade in active">
-                                    @if ($newProduct)
-                                        @foreach ($newProduct as $new)
+                                    @if ($listProduct)
+                                        @foreach ($listProduct as $new)
                                             <div class="item content-loai-xe-364" style="display: inline-block;">
-                                                <a href="javascript: void(0);">
+                                                <a href="{{route('detail', ['slug' => $new->slug])}}">
                                                     <img class="hover-me" src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}" alt="Air Blade 125cc"></a>
                                                 <div class="desc">
                                                     <p class="name">{{$new->name}}</p>
-                                                    <p class="price">Giá từ<span> {{$new->price}} VNĐ</span></p>
+                                                    <p class="price">Giá từ<span> <strong>{{number_format($new->price)}} VNĐ</strong></span></p>
                                                     <a href="javascript: void(0);">Xem chi tiết <i
                                                                 class="fa fa-angle-right"></i></a>
                                                 </div>
@@ -76,8 +76,8 @@
                                                          alt="{{$new->name}}">
                                                     <div class="more">
                                                         <p class="name">{{$new->name}}</p>
-                                                        <p class="price">Giá từ <b>{{$new->price}} VNĐ</b></p>
-                                                        <a class="btn" href="javascript: void(0);">
+                                                        <p class="price">Giá từ <strong>{{number_format($new->price)}} VNĐ</strong></p>
+                                                        <a class="btn" href="{{route('detail', ['slug' => $new->slug])}}">
                                                             <img src="/source/images/icons/btn-more.png" alt="">
                                                         </a>
                                                     </div>
@@ -86,43 +86,40 @@
                                         @endforeach
                                     @endif
                                 </div>
-                                <div id="menu1" class="tab-pane fade">
-                                    @if ($newProduct)
-                                        @foreach ($newProduct as $new)
-                                            <div class="item content-loai-xe-364" style="display: inline-block;">
-                                                <a href="javascript: void(0);"><img class="hover-me"
-                                                                                    src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}"
-                                                                                    alt="Air Blade 125cc"></a>
-                                                <div class="desc">
-                                                    <p class="name">{{$new->name}}</p>
-                                                    <p class="price">Giá từ<span> {{$new->price}} VNĐ</span></p>
-                                                    <a href="javascript: void(0);">Xem chi tiết <i
-                                                                class="fa fa-angle-right"></i></a>
-                                                </div>
-                                                <div class="item-hovered">
-                                                    <img class="img-hovered"
-                                                         src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}"
-                                                         alt="{{$new->name}}">
-                                                    <div class="more">
-                                                        <p class="name">{{$new->name}}</p>
-                                                        <p class="price">Giá từ <b>{{$new->price}} VNĐ</b></p>
-                                                        <a class="btn" href="javascript: void(0);">
-                                                            <img src="/source/images/icons/btn-more.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    @endif
-                                </div>
-                                <div id="menu2" class="tab-pane fade">
-                                    <h3>Menu 2</h3>
-                                    <p>Some content in menu 2.</p>
-                                </div>
-                                <div id="menu3" class="tab-pane fade">
-                                    <h3>Menu 3</h3>
-                                    <p>Some content in menu 3.</p>
-                                </div>
+                                @if ($listCategory)
+                                    @foreach($listCategory as $cat)
+                                        <div id="menu{{$cat->id}}" class="tab-pane fade">
+                                            @if ($listProduct)
+                                                @foreach ($listProduct as $new)
+                                                    @if ($cat->id == $new->category_id)
+                                                        <div class="item content-loai-xe-364" style="display: inline-block;">
+                                                            <a href="javascript: void(0);">
+                                                                <img class="hover-me" src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}" alt="Air Blade 125cc"></a>
+                                                            <div class="desc">
+                                                                <p class="name">{{$new->name}}</p>
+                                                                <p class="price">Giá từ<span> <strong>{{number_format($new->price)}} VNĐ</strong></span></p>
+                                                                <a href="javascript: void(0);">Xem chi tiết <i
+                                                                            class="fa fa-angle-right"></i></a>
+                                                            </div>
+                                                            <div class="item-hovered">
+                                                                <img class="img-hovered"
+                                                                     src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}"
+                                                                     alt="{{$new->name}}">
+                                                                <div class="more">
+                                                                    <p class="name">{{$new->name}}</p>
+                                                                    <p class="price">Giá từ <strong>{{number_format($new->price)}} VNĐ</strong></p>
+                                                                    <a class="btn" href="javascript: void(0);">
+                                                                        <img src="/source/images/icons/btn-more.png" alt="">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>

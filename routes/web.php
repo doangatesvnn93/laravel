@@ -12,7 +12,7 @@
 */
 
 Route::get('/', [
-    'as'    => 'trang-chu',
+    'as'    => 'landing',
     'uses'  => 'PageController@index'
 ]);
 
@@ -21,8 +21,8 @@ Route::get('index', [
     'uses'  => 'PageController@index'
 ]);
 
-Route::get('detail', [
-    'as'    => 'chi-tiet',
+Route::get('detail/{slug}', [
+    'as'    => 'detail',
     'uses'  => 'PageController@detail'
 ]);
 
