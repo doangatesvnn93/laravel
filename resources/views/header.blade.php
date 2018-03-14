@@ -160,7 +160,6 @@
                                             <p class="type">{{$cat->name}}</p>
                                             @if ($listProduct)
                                                 @foreach($listProduct as $item)
-
                                                     @if ($item->category_id == $cat->id)
                                                         <div class="item">
                                                             <a href="{{route('detail', ['slug' => $item->slug])}}">

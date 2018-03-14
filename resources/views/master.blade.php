@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website bán xe máy </title>
+    <title>@yield('pageTitle') - Website bán xe máy</title>
     <link rel="shortcut icon" type="image/png" href="source/assets/dest/images/favicon.png"/>
     <meta name="description" content="Website bán xe máy Honda">
     <meta name="keywords" content="honda,xemay,xetayga,xeso,phukienxemay">
@@ -20,8 +20,16 @@
     <link rel="stylesheet" href="/source/assets/dest/css/animate.css">
     <link href="/css/landing.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" title="style" href="/source/assets/dest/css/custom.css">
+    <script src="/source/assets/dest/js/jquery.js"></script>
 </head>
 <body id="show-sp">
+<div id="social-right-fixed">
+    <a href="https://facebook.com/doangates" target="_blank"><i class="icons icon-sright-fb"></i></a>
+    <a href="javascript:void(0)" target="_blank"><i class="icons icon-sright-yo"></i></a>
+    <a href="mailto:doangatesvnn93@gmail.com" target="_blank"><i class="icons icon-sright-mail"></i></a>
+    <a href="tel:+841646518107" target="_blank"><i class="icons icon-sright-tel"></i></a>
+    <a href="javascript: gotoTop();" target="_blank"><i class="icons icon-sright-up"></i></a>
+</div>
 <!-- #header -->
 @include('header')
 <!-- #end header -->
@@ -32,7 +40,6 @@
 
 
 <!-- include js files -->
-<script src="/source/assets/dest/js/jquery.js"></script>
 <script src="/source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
 <script src="/source/assets/dest/js//bootstrap.min.js"></script>
 <script src="/source/assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
@@ -49,15 +56,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="/source/assets/dest/js/custom2.js"></script>
 <script>
-    $(document).ready(function($) {
-        $(window).scroll(function(){
-            if($(this).scrollTop()>150){
-                $(".header-bottom").addClass('fixNav')
-            }else{
-                $(".header-bottom").removeClass('fixNav')
-            }}
+    function gotoTop() {
+        jQuery('html, body').animate({scrollTop: 0}, 1000);
+    }
+
+    $(document).ready(function ($) {
+        $(window).scroll(function () {
+                if ($(this).scrollTop() > 150) {
+                    $(".header-bottom").addClass('fixNav')
+                } else {
+                    $(".header-bottom").removeClass('fixNav')
+                }
+            }
         )
-    })
+    });
 </script>
 </body>
 </html>

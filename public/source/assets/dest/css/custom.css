@@ -49,3 +49,47 @@
     max-height: 100%;
 }
 
+#social-right-fixed {
+    position: fixed;
+    right: 5px;
+    top: 50%;
+    margin-top: -90px;
+    z-index: 99999;
+    width: 38px;
+}
+
+#social-right-fixed a {
+    display: block;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#social-right-fixed .icons {
+    display: inline-block;
+    background-image: url("/source/assets/dest/images/icons/sprite2.png");
+    background-repeat: no-repeat;
+    height: 33px;
+    width: 33px;
+}
+
+i.icons.icon-sright-fb {
+    background-position: -3px -6px;
+}
+
+i.icons.icon-sright-yo {
+    background-position: -3px -42px;
+}
+
+i.icons.icon-sright-mail {
+    background-position: -3px -78px;
+}
+
+i.icons.icon-sright-tel {
+    background-position: -3px -115px;
+}
+
+i.icons.icon-sright-up {
+    width: 38px !important;
+    background-position: -2px -147px;
+}
+

@@ -944,10 +944,10 @@ select {
 }
 
 sup {
-    position: relative;
-    color: #58a7c6;
-    top: -28px;
-    font-size: 30px
+    /*position: relative;*/
+    /*color: #58a7c6;*/
+    /*top: -28px;*/
+    /*font-size: 30px*/
 }
 
 sub {
@@ -1544,41 +1544,41 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 ============================================================================= */
 
 .single-item-options {
-    overflow: hidden
+    overflow: hidden;
 }
 
 .single-item-options > * {
-    float: left
+    /*float: left*/
 }
 
 .single-item-options .add-to-cart {
-    margin-left: 20px
+    margin-top: 20px;
 }
 
 .wc-select {
     width: 90px;
     height: 35px;
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .beta-dropdown {
-    display: none
+    display: none;
 }
 
 .beta-components {
-    overflow: hidden
+    overflow: hidden;
 }
 
 .beta-components.space-right .beta-comp {
-    margin-right: 7px
+    margin-right: 7px;
 }
 
 .beta-components.space-left .beta-comp {
-    margin-left: 7px
+    margin-left: 7px;
 }
 
 .beta-comp {
-    float: left
+    float: left;
 }
 
 /* ==========================================================================
@@ -1589,7 +1589,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
     height: 37px;
     line-height: 37px;
     padding: 0 10px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .cart .beta-select {
@@ -1601,13 +1601,13 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
     color: #999da0;
     padding-left: 0;
     padding-right: 0;
-    font-size: 16px
+    font-size: 16px;
 }
 
 .cart .beta-select i:last-child {
     margin-left: 3px;
     padding-left: 0;
-    padding-right: 0
+    padding-right: 0;
 }
 
 .cart-body {
@@ -1617,13 +1617,13 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
     background: #fff;
     border: 1px solid #e1e1e1;
     padding: 0 10px 10px;
-    cursor: default
+    cursor: default;
 }
 
 .cart-item {
     position: relative;
     padding: 20px 0;
-    border-bottom: 1px solid #e1e1e1
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .cart-item-edit {
@@ -1635,7 +1635,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
     width: 15px;
     height: 15px;
     text-align: center;
-    line-height: 15px
+    line-height: 15px;
 }
 
 .cart-item-delete {
@@ -1929,7 +1929,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 }
 
 .add-to-cart {
-    background-color: #3a5c83;
+    background-color: #e6002c;
     height: 35px;
     width: 40px;
     text-align: center;
@@ -5642,17 +5642,22 @@ li.box-port-filter {
 }
 
 .tp-leftarrow.navbar {
-    background: url(../vendors/revolution-slider/assets/large_left.png) no-Repeat 0px 9px;
-    width: 40px;
-    height: 40px;
-}
-
-.tp-rightarrow.navbar {
-    background: url(../vendors/revolution-slider/assets/large_right.png) no-Repeat -1px 9px;
+    background: url(../vendors/revolution-slider/assets/left1.ico) no-Repeat;
+    background-size: 40px;
     width: 40px;
     height: 40px;
     position: absolute;
-    right: 15px;
+    left: 50px;
+    top: 0px;
+}
+
+.tp-rightarrow.navbar {
+    background: url(../vendors/revolution-slider/assets/right1.png) no-Repeat;
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 50px;
     top: 0px;
 }
 
