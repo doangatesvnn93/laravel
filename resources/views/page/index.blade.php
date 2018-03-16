@@ -21,9 +21,9 @@ Trang chủ
                                          data-oheight="undefined">
                                         <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
                                              data-bgposition="center center" data-bgrepeat="no-repeat"
-                                             data-lazydone="undefined" src="/source/images/slide/{{$slide->image}}"
-                                             data-src="/source/images/slide/{{$slide->image}}"
-                                             style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('/source/images/slide/{{$slide->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
+                                             data-lazydone="undefined" src="{{$slide->link}}"
+                                             data-src="{{$slide->link}}"
+                                             style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('{{$slide->link}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
                                         </div>
                                     </div>
                                 </li>
@@ -66,7 +66,7 @@ Trang chủ
                                         @foreach ($listProduct as $new)
                                             <div class="item content-loai-xe-364" style="display: inline-block;">
                                                 <a href="{{route('detail', ['slug' => $new->slug])}}">
-                                                    <img class="hover-me" src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}" alt="Air Blade 125cc"></a>
+                                                    <img class="hover-me" src="{{$new->avatar ? $new->avatar : ""}}" alt="{{$new->name}}"></a>
                                                 <div class="desc">
                                                     <p class="name">{{$new->name}}</p>
                                                     <p class="price">Giá từ<span> <strong>{{number_format($new->price)}} VNĐ</strong></span></p>
@@ -75,13 +75,13 @@ Trang chủ
                                                 </div>
                                                 <div class="item-hovered">
                                                     <img class="img-hovered"
-                                                         src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}"
+                                                         src="{{$new->avatar ? $new->avatar : ""}}"
                                                          alt="{{$new->name}}">
                                                     <div class="more">
                                                         <p class="name">{{$new->name}}</p>
                                                         <p class="price">Giá từ <strong>{{number_format($new->price)}} VNĐ</strong></p>
                                                         <a class="btn" href="{{route('detail', ['slug' => $new->slug])}}">
-                                                            <img src="/source/images/icons/btn-more.png" alt="">
+                                                            <img src="/themes/page/images/icons/btn-more.png" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -97,7 +97,7 @@ Trang chủ
                                                     @if ($cat->id == $new->category_id)
                                                         <div class="item content-loai-xe-364" style="display: inline-block;">
                                                             <a href="javascript: void(0);">
-                                                                <img class="hover-me" src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}" alt="Air Blade 125cc"></a>
+                                                                <img class="hover-me" src="/themes/page/images/products/{{$new->avatar ? $new->avatar : ""}}" alt="Air Blade 125cc"></a>
                                                             <div class="desc">
                                                                 <p class="name">{{$new->name}}</p>
                                                                 <p class="price">Giá từ<span> <strong>{{number_format($new->price)}} VNĐ</strong></span></p>
@@ -106,13 +106,13 @@ Trang chủ
                                                             </div>
                                                             <div class="item-hovered">
                                                                 <img class="img-hovered"
-                                                                     src="/source/images/products/{{$new->avatar ? $new->avatar : ""}}"
+                                                                     src="/themes/page/images/products/{{$new->avatar ? $new->avatar : ""}}"
                                                                      alt="{{$new->name}}">
                                                                 <div class="more">
                                                                     <p class="name">{{$new->name}}</p>
                                                                     <p class="price">Giá từ <strong>{{number_format($new->price)}} VNĐ</strong></p>
                                                                     <a class="btn" href="javascript: void(0);">
-                                                                        <img src="/source/images/icons/btn-more.png" alt="">
+                                                                        <img src="/themes/page/images/icons/btn-more.png" alt="">
                                                                     </a>
                                                                 </div>
                                                             </div>

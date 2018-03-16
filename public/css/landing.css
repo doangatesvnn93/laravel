@@ -207,7 +207,7 @@
 }
 
 #footer .contact {
-    background: url(../source/images/background/contact.jpg) no-repeat center top/cover;
+    background: url(/themes/page/images/background/contact.jpg) no-repeat center top/cover;
     width: 100%;
     /*padding-bottom: 26px;*/
 }
@@ -222,7 +222,7 @@
 #footer .contact {
     width: 100%;
     /*padding-bottom: 26px;*/
-    background: url(../source/images/background/contact.jpg) no-repeat center top/cover;
+    background: url(/themes/page/images/background/contact.jpg) no-repeat center top/cover;
     height: 250px;
 }
 
@@ -519,7 +519,7 @@
     width: 91px;
     height: 40px;
     float: left;
-    background: url(../source/images/background/rerss.jpg) no-repeat 0 0;
+    background: url(/themes/page/images/background/rerss.jpg) no-repeat 0 0;
     -webkit-transition: 0.3s linear;
     -moz-transition: 0.3s linear;
     -ms-transition: 0.3s linear;

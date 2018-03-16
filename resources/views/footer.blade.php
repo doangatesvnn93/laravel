@@ -36,7 +36,7 @@
     <div class="container footer-bottom">
         <div class="row">
             <div class="col-sm-3">
-                <img src="/source/assets/dest/images/logo-footer.png">
+                <img src="/themes/page/images/logo-footer.png">
             </div>
             <div class="col-sm-2">
                 <div class="widget">
@@ -87,8 +87,8 @@
     <div class="container">
         <p class="pull-left">Copyright. &copy; 2018</p>
         <p class="pull-right pay-options">
-            <a href="#"><img src="/source/assets/dest/images/icons/facebook.png" alt="" /></a>
-            <a href="#"><img src="/source/assets/dest/images/icons/youtube.png" alt="" /></a>
+            <a href="#"><img src="/themes/page/images/icons/facebook.png" alt="" /></a>
+            <a href="#"><img src="/themes/page/images/icons/youtube.png" alt="" /></a>
         </p>
         <div class="clearfix"></div>
     </div> <!-- .container -->

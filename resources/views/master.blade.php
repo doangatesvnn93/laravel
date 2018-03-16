@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('pageTitle') - Website bán xe máy</title>
-    <link rel="shortcut icon" type="image/png" href="source/assets/dest/images/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="/themes/page/images/favicon.png"/>
     <meta name="description" content="Website bán xe máy Honda">
     <meta name="keywords" content="honda,xemay,xetayga,xeso,phukienxemay">
     <meta name="author" content="DoanGates | 01646518107">
     <base hrer="{{asset('')}}">
     <link href='https://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/source/assets/dest/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/source/assets/dest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/source/assets/dest/vendors/colorbox/example3/colorbox.css">
-    <link rel="stylesheet" href="/source/assets/dest/rs-plugin/css/settings.css">
-    <link rel="stylesheet" href="/source/assets/dest/rs-plugin/css/responsive.css">
-    <link rel="stylesheet" title="style" href="/source/assets/dest/css/style.css">
-    <link rel="stylesheet" href="/source/assets/dest/css/animate.css">
+    <link rel="stylesheet" href="/themes/page/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/themes/page/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/themes/page/vendors/colorbox/example3/colorbox.css">
+    <link rel="stylesheet" href="/themes/page/css/settings.css">
+    <link rel="stylesheet" href="/themes/page/css/responsive.css">
+    <link rel="stylesheet" title="style" href="/themes/page/css/style.css">
+    <link rel="stylesheet" href="/themes/page/css/animate.css">
     <link href="/css/landing.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" title="style" href="/source/assets/dest/css/custom.css">
-    <script src="/source/assets/dest/js/jquery.js"></script>
+    <link rel="stylesheet" title="style" href="/themes/page/css/custom.css">
+    @yield('styleHeader')
+    <script src="/themes/page/js/jquery.js"></script>
 </head>
 <body id="show-sp">
 <div id="social-right-fixed">
@@ -40,21 +41,21 @@
 
 
 <!-- include js files -->
-<script src="/source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
-<script src="/source/assets/dest/js//bootstrap.min.js"></script>
-<script src="/source/assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
-<script src="/source/assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
-<script src="/source/assets/dest/vendors/animo/Animo.js"></script>
-<script src="/source/assets/dest/vendors/dug/dug.js"></script>
-<script src="/source/assets/dest/js/scripts.min.js"></script>
-<script src="/source/assets/dest/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script src="/source/assets/dest/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="/source/assets/dest/js/waypoints.min.js"></script>
-<script src="/source/assets/dest/js/wow.min.js"></script>
+<script src="/themes/page/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="/themes/page/js//bootstrap.min.js"></script>
+<script src="/themes/page/vendors/bxslider/jquery.bxslider.min.js"></script>
+<script src="/themes/page/vendors/colorbox/jquery.colorbox-min.js"></script>
+<script src="/themes/page/vendors/animo/Animo.js"></script>
+<script src="/themes/page/vendors/dug/dug.js"></script>
+<script src="/themes/page/js/scripts.min.js"></script>
+<script src="/themes/page/js/jquery.themepunch.tools.min.js"></script>
+<script src="/themes/page/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/themes/page/js/waypoints.min.js"></script>
+<script src="/themes/page/js/wow.min.js"></script>
 <script src="/js/script.js"></script>
 <!--customjs-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<script src="/source/assets/dest/js/custom2.js"></script>
+<script src="/themes/page/js/custom2.js"></script>
 <script>
     function gotoTop() {
         jQuery('html, body').animate({scrollTop: 0}, 1000);
@@ -71,5 +72,7 @@
         )
     });
 </script>
+@yield('styleFooter')
+@yield('script')
 </body>
 </html>
