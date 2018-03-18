@@ -48,6 +48,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        $enviroment = config('app')['env'];
+
+        if ($exception) {
+            if($enviroment == 'production') {
+                return redirect()->route('404');
+            } else {
+                return parent::render($request, $exception);
+            }
+        }
     }
 }

@@ -40,6 +40,11 @@ Route::get('about', [
    'uses' => 'PageController@about'
 ]);
 
+Route::get('404.html', [
+    'as' => '404',
+   'uses' => 'InitController@error'
+]);
+
 Route::get('get-content/{id}', ['as' => 'get-content', 'uses' => 'PageController@get']);
 
 Auth::routes();

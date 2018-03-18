@@ -405,6 +405,10 @@ i.icons.icon-sright-up {
         display: block;
     }
 
+    .menu-mobile .navbar {
+        z-index: 99999;
+    }
+
     .dropdown-submenu {
         position: relative;
     }

@@ -46,4 +46,9 @@ class InitController extends Controller
         }
         return $string;
     }
+
+    public function error()
+    {
+        return view('404');
+    }
 }
