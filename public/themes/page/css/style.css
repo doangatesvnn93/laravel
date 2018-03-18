@@ -1940,7 +1940,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 .add-to-cart i {
     font-size: 22px;
     color: #fff;
-    line-height: 35px
+    line-height: 30px
 }
 
 .flash-del {
@@ -4476,7 +4476,7 @@ tfoot td a i {
     }
 
     .container {
-        width: 400px;
+        /*width: 400px;*/
     }
 
     .content {
@@ -5489,6 +5489,8 @@ li.box-port-filter {
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    width: 350px;
+    height: 200px;
 }
 
 /*********/
@@ -5905,3 +5907,4 @@ li.box-port-filter {
     border-left: 1px solid #ddd !important;
     border-right: 1px solid #ddd !important;
 }
+

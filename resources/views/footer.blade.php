@@ -1,4 +1,5 @@
-<div id="footer" class="color-div">
+<div id="">
+    <div id="footer" class="color-div">
     <div class="contact">
         <div class="center-content clearfix">
             <div class="hotline">
@@ -35,7 +36,7 @@
     </div>
     <div class="container footer-bottom">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-3 logo-footer">
                 <img src="/themes/page/images/logo-footer.png">
             </div>
             <div class="col-sm-2">
@@ -83,6 +84,7 @@
         </div> <!-- .row -->
     </div> <!-- .container -->
 </div> <!-- #footer -->
+</div>
 <div class="copyright">
     <div class="container">
         <p class="pull-left">Copyright. &copy; 2018</p>

@@ -35,14 +35,25 @@ class PageController extends InitController
         return view('page.detail', $data);
     }
 
-    public function list()
+    public function list(Request $request)
     {
-        return view('page.list');
+        $listCategory = Category::get();
+        $listProduct = Product::get();
+        $data = [
+            'listProduct'    => $listProduct,
+            'listCategory'   => $listCategory
+        ];
+        return view('page.list', $data);
     }
 
     public function contact()
     {
         return view('page.contact');
+    }
+
+    public function about()
+    {
+        return view('page.about');
     }
 
     public function get($id)

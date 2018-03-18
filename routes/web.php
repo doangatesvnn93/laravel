@@ -21,19 +21,23 @@ Route::get('index', [
     'uses' => 'PageController@index'
 ]);
 
-Route::get('detail/{slug}', [
+Route::get('chi-tiet/{slug}', [
     'as' => 'detail',
     'uses' => 'PageController@detail'
 ]);
 
-Route::get('list', [
-    'as' => 'danh-sach',
+Route::get('san-pham', [
+    'as' => 'list',
     'uses' => 'PageController@list'
 ]);
 
 Route::get('contact', [
     'as' => 'contact',
     'uses' => 'PageController@contact'
+]);
+Route::get('about', [
+   'as' => 'about',
+   'uses' => 'PageController@about'
 ]);
 
 Route::get('get-content/{id}', ['as' => 'get-content', 'uses' => 'PageController@get']);

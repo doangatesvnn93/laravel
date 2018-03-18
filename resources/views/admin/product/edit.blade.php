@@ -94,7 +94,7 @@
                                                         </a>
                                                     </span>
                                                 </div>
-                                                <img id="holder-color-0" style="margin-top:15px;max-height:100px;" src="{{ $colorProductData[0]->color }}">
+                                                <img id="holder-color-0" style="margin-top:15px;max-height:100px;" src="{{ $colorProductData[0]->color }}"  width="80" height="30">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -176,7 +176,7 @@
                                             + '</a>'
                                         + '</span>'
                                     + '</div>'
-                                    + '<img id="holder-color-' + numberColor + '" style="margin-top:15px;max-height:100px;" src="' + data.color + '">'
+                                    + '<img id="holder-color-' + numberColor + '" style="margin-top:15px;max-height:100px;" src="' + data.color + '" width="80" height="30">'
                                 + '</div>'
                             + '</div>'
                             + '<div class="col-sm-4">'

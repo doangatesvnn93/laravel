@@ -27,7 +27,7 @@
                             <img src="{{ $productData->avatar }}">
                         </div>
                     </div>
-                    <div class="col-sm-5" style="margin-top: 50px;">
+                    <div class="col-sm-5 item-top" style="margin-top: 50px;">
                         <div class="single-item-body">
                             <p class="single-item-title">{{$productData->name}}</p>
                             <p class="single-item-price">
@@ -125,7 +125,9 @@
                                 <div class="col-sm-4">
                                     <div class="single-item">
                                         <div class="single-item-header">
-                                            <a href="{{route('detail', ['slug' => $product->slug])}}"><img src="{{$product->avatar}}" alt=""></a>
+                                            <a href="{{route('detail', ['slug' => $product->slug])}}">
+                                                <img src="{{$product->avatar}}" alt="" width="350" height="200">
+                                            </a>
                                         </div>
                                         <div class="single-item-body">
                                             <p class="single-item-title">{{$product->name}}</p>
@@ -134,7 +136,7 @@
                                             </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="add-to-cart" href="product.html"><i class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary" href="{{route('detail', ['slug' => $product->slug])}}">Details <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
@@ -154,10 +156,16 @@
         .chitiet {
             cursor: pointer;
         }
+        .table-bordered {
+            border: 1px solid #ddd !important;
+        }
     </style>
 @endsection
 @section('script')
     <script>
+        jQuery(document).ready(function(){
+            jQuery('table').addClass('table').addClass('table-bordered');
+        });
         function changeColor(img) {
             jQuery('#thetable img').attr('src', img);
         }

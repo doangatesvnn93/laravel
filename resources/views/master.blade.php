@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="/themes/page/css/responsive.css">
     <link rel="stylesheet" title="style" href="/themes/page/css/style.css">
     <link rel="stylesheet" href="/themes/page/css/animate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link href="/css/landing.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" title="style" href="/themes/page/css/custom.css">
     @yield('styleHeader')
-    <script src="/themes/page/js/jquery.js"></script>
 </head>
 <body id="show-sp">
 <div id="social-right-fixed">
@@ -41,6 +41,7 @@
 
 
 <!-- include js files -->
+<script src="/themes/page/js/jquery.js"></script>
 <script src="/themes/page/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
 <script src="/themes/page/js//bootstrap.min.js"></script>
 <script src="/themes/page/vendors/bxslider/jquery.bxslider.min.js"></script>
@@ -53,8 +54,8 @@
 <script src="/themes/page/js/waypoints.min.js"></script>
 <script src="/themes/page/js/wow.min.js"></script>
 <script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <!--customjs-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="/themes/page/js/custom2.js"></script>
 <script>
     function gotoTop() {

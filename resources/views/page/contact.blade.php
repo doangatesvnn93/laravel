@@ -1,5 +1,5 @@
-@extends('master');
-@section('content');
+@extends('master')
+@section('content')
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
@@ -15,7 +15,9 @@
 </div>
 <div class="beta-map">
 
-    <div class="abs-fullwidth beta-map wow flipInX"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3678.0141923553406!2d89.551518!3d22.801938!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff8ff8ef7ea2b7%3A0x1f1e9fc1cf4bd626!2sPranon+Pvt.+Limited!5e0!3m2!1sen!2s!4v1407828576904" ></iframe></div>
+    <div class="abs-fullwidth beta-map wow flipInX">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7628702683846!2d105.80354746430768!3d21.002140494063845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca29d647f43%3A0x5738e2659426672!2zMjRUMSwgU-G7kSA4NSBWxakgVHLhu41uZyBQaOG7pW5nLCBLaHUgY2h1bmcgY8awIEhhcHVsaWNvLCBUaGFuaCBYdcOibiBUcnVuZywgVGhhbmggWHXDom4sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1521361092852" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
 </div>
 <div class="container">
     <div id="content" class="space-top-none">
@@ -74,4 +76,4 @@
     </div> <!-- #content -->
 </div> <!-- .container -->
 
-@endsection;
+@endsection
