@@ -321,8 +321,24 @@
     background-color: #ffffff
 }
 
-.inner-title, .beta-breadcrumb, .beta-breadcrumb a {
-    color: black
+.beta-breadcrumb, .beta-breadcrumb a {
+    color: #288ad6;
+    padding: 10px 0;
+    font-size: 14px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.beta-breadcrumb span {
+    display: inline-block;
+    color: #999;
+    font-size: 20px;
+    padding: 2px 5px 0 0;
+    line-height: 1;
+}
+
+.inner-title {
+    color: #0c0c0c;
 }
 
 .main-menu > ul.l-inline > li > a {
@@ -457,5 +473,8 @@ i.icons.icon-sright-up {
         border-radius: 6px 0 6px 6px;
     }
 
+    .beta-breadcrumb, .beta-breadcrumb a {
+        display: none;
+    }
 }
 

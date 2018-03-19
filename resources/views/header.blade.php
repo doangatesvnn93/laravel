@@ -17,7 +17,7 @@
                         <li>
                             <div class="beta-comp">
                                 <form role="search" method="get" id="searchform" action="/">
-                                    <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..."/>
+                                    <input type="text" value="" name="s" id="s" placeholder="Bạn đang tìm gì..."/>
                                     <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                                 </form>
                             </div>
@@ -32,30 +32,6 @@
                                             <div class="media">
                                                 <a class="pull-left" href="#"><img
                                                             src="/themes/page/images/products/cart/1.png" alt=""></a>
-                                                <div class="media-body">
-                                                    <span class="cart-item-title">Sample Woman Top</span>
-                                                    <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                                                    <span class="cart-item-amount">1*<span>$49.50</span></span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="cart-item">
-                                            <div class="media">
-                                                <a class="pull-left" href="#"><img
-                                                            src="/themes/page/images/products/cart/2.png" alt=""></a>
-                                                <div class="media-body">
-                                                    <span class="cart-item-title">Sample Woman Top</span>
-                                                    <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                                                    <span class="cart-item-amount">1*<span>$49.50</span></span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="cart-item">
-                                            <div class="media">
-                                                <a class="pull-left" href="#"><img
-                                                            src="/themes/page/images/products/cart/3.png" alt=""></a>
                                                 <div class="media-body">
                                                     <span class="cart-item-title">Sample Woman Top</span>
                                                     <span class="cart-item-options">Size: XS; Colar: Navy</span>
@@ -151,13 +127,15 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('landing') }}">Trang chủ</a></li>
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản phẩm<b class="caret"></b></a>
+                        <a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown">Sản phẩm <b class="caret"></b></a>
+
                         <ul class="dropdown-menu multi-level">
                             <li><a href="{{ route('list') }}">Tất cả</a></li>
                             @foreach($listCategory as $cat)
                                 <li><a href="{{ route('list') }}?cat={{ $cat->slug }}">{{ $cat->name }}</a></li>
                             @endforeach
                         </ul>
+                        <div class="clearfix"></div>
                     </li>
                     <li>
                         <a href="{{ route('about') }}">Giới thiệu</a>

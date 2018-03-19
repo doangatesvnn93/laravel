@@ -12,9 +12,9 @@ class PageController extends InitController
 {
     public function index()
     {
-        $listSlide = Slide::all();
-        $listProduct = Product::get();
-        $listCategory = Category::get();
+        $listSlide = Slide::where('status', 1)->get();
+        $listProduct = Product::where('status', 1)->get();
+        $listCategory = Category::where('status', 1)->get();
         $data = [
             'listSlide'     => $listSlide,
             'listProduct'    => $listProduct,
@@ -27,7 +27,12 @@ class PageController extends InitController
     public function detail($slug)
     {
         $productData = DB::table('g_products')->where('slug', $slug)->first();
-        $listProductRelate = DB::table('g_products')->where('category_id', $productData->category_id)->where('id', '<>', $productData->id)->limit(3)->get();
+        $listProductRelate = DB::table('g_products')
+            ->where('category_id', $productData->category_id)
+            ->where('id', '<>', $productData->id)
+            ->where('status', 1)
+            ->limit(3)
+            ->get();
         $data = [
             'productData'     => $productData,
             'listProductRelate' => $listProductRelate
@@ -37,8 +42,8 @@ class PageController extends InitController
 
     public function list(Request $request)
     {
-        $listCategory = Category::get();
-        $listProduct = Product::get();
+        $listCategory = Category::where('status', 1)->get();
+        $listProduct = Product::where('status', 1)->get();
         $data = [
             'listProduct'    => $listProduct,
             'listCategory'   => $listCategory
@@ -58,7 +63,7 @@ class PageController extends InitController
 
     public function get($id)
     {
-        $listSlide = Slide::all();
+        $listSlide = Slide::where('status', 1)->get();
         $newProduct = Product::where('new', 1)->paginate(4, ['*'], 'new');
         $saleProduct = Product::where('promotion_price', '<>', 0)->paginate(4, ['*'], 'sale');
         $data = [

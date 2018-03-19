@@ -5,14 +5,13 @@ Danh sách sản phẩm
 @section('content')
 <div class="inner-header">
     <div class="container">
+        <div class="beta-breadcrumb font-large">
+            <a href="{{ route('landing') }}">Trang chủ</a> <span>›</span> <a href="{{ route('list') }}">Sản phẩm</a>
+        </div>
         <div class="pull-left">
-            <h6 class="inner-title">Sản phẩm</h6>
+            <h6 class="inner-title">Danh sách sản phẩm</h6>
         </div>
-        <div class="pull-right">
-            <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Sản phẩm</span>
-            </div>
-        </div>
+
         <div class="clearfix"></div>
     </div>
 </div>

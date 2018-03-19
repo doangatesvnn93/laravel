@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="col-sm-2">Name</div>
                                     <div class="col-sm-4">
-                                        <input name="name" type="text" class="form-control" value="{{ $data->name }}">
+                                        <input name="name" type="text" class="form-control" value="{{ $data->name }}" required>
                                     </div>
                                     <div class="clearbox"></div>
                                 </div>
@@ -45,7 +45,7 @@
                                     <div class="col-sm-2"><p>Giá</p></div>
                                     <div class="col-sm-4">
                                         <div class="select-control">
-                                            <input class="form-control" name="price" value="{{ $data->price }}">
+                                            <input class="form-control" name="price" value="{{ $data->price }}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-2"><p>Avatar</p></div>
@@ -60,6 +60,18 @@
                                                     </span>
                                             </div>
                                             <img id="holder-avatar" style="margin-top:15px;max-height:100px;">
+                                        </div>
+                                    </div>
+                                    <div class="clearbox"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-2"><p>Status</p></div>
+                                    <div class="col-sm-4">
+                                        <div class="select-control">
+                                            <select class="form-control" name="status">
+                                                <option value="1" @if($data->status == 1)selected @endif>Active</option>
+                                                <option value="0" @if($data->status == 0)selected @endif>Inactive</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="clearbox"></div>
@@ -86,7 +98,7 @@
                                             <div class="col-sm-2 pd0">Màu</div>
                                             <div class="col-sm-10 pd0">
                                                 <div class="input-group">
-                                                    <input id="thumbnail-0" class="form-control" type="text" name="color[]" required value="{{ $colorProductData[0]->color }}">
+                                                    <input id="thumbnail-0" class="form-control" type="text" name="color[]" value="{{ $colorProductData[0]->color }}">
                                                     <span class="input-group-btn">
                                                         <a data-input="thumbnail-0" data-preview="holder-color-0"
                                                            class="btn btn-primary choose-file">
@@ -101,7 +113,7 @@
                                             <div class="col-sm-3 pd0"> Màu sản phẩm</div>
                                             <div class="col-sm-9 pd0">
                                                 <div class="input-group">
-                                                    <input id="product-color-0" class="form-control" type="text" name="productColor[]" required value="{{ $colorProductData[0]->product }}">
+                                                    <input id="product-color-0" class="form-control" type="text" name="productColor[]" value="{{ $colorProductData[0]->product }}">
                                                     <span class="input-group-btn">
                                                          <a data-input="product-color-0" data-preview="holder-product-0"
                                                             class="btn btn-primary choose-file">
@@ -169,7 +181,7 @@
                                 + '<div class="col-sm-2 pd0">Màu</div>'
                                 + '<div class="col-sm-10 pd0">'
                                     + '<div class="input-group">'
-                                        + '<input id="thumbnail-' + numberColor + '" class="form-control" type="text" name="color[]" required value="' + data.color + '">'
+                                        + '<input id="thumbnail-' + numberColor + '" class="form-control" type="text" name="color[]" value="' + data.color + '">'
                                         + '<span class="input-group-btn">'
                                             + '<a data-input="thumbnail-' + numberColor + '" data-preview="holder-color-' + numberColor + '" class="btn btn-primary choose-file">'
                                                 + '<i class="fa fa-picture-o"></i> Choose'
@@ -183,7 +195,7 @@
                                 + '<div class="col-sm-3 pd0"> Màu sản phẩm</div>'
                                 + '<div class="col-sm-9 pd0">'
                                     + '<div class="input-group">'
-                                        + '<input id="product-color-' + numberColor + '" class="form-control" type="text" name="productColor[]" required value="' + data.product + '">'
+                                        + '<input id="product-color-' + numberColor + '" class="form-control" type="text" name="productColor[]" value="' + data.product + '">'
                                         + '<span class="input-group-btn">'
                                             + '<a data-input="product-color-' + numberColor + '" data-preview="holder-product-' + numberColor + '" class="btn btn-primary choose-file">'
                                                 + '<i class="fa fa-picture-o"></i> Choose'

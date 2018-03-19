@@ -1031,7 +1031,7 @@ sub {
 }
 
 a i {
-    color: #f90;
+    color: #ed1b2f;
     font-size: 10px;
     padding-left: 5px;
     padding-right: 5px
@@ -1297,7 +1297,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 }
 
 #content {
-    padding: 60px 0
+    padding: 20px 0
 }
 
 #content.space-top-none {

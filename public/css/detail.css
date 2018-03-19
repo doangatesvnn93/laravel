@@ -59,3 +59,29 @@
 .item-top .single-item-caption, .item-top .single-item-body {
     text-align: left;
 }
+
+.color-title {
+    color: #d0021b;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.single-item-price strong.area_price {
+    display: inline-block;
+    overflow: hidden;
+    color: #d0021b;
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.color-product img{
+
+}
+
+.color-product .name-color-product {
+    position: absolute;
+    top: 5px;
+    margin-left: 10px;
+}

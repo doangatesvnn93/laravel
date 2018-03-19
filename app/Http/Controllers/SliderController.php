@@ -23,12 +23,14 @@ class SliderController extends InitController
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {   if ($request->isMethod('post')) {
+    {
+        if ($request->isMethod('post')) {
             $validate = Slide::validate($request);
             if ($validate->error == false) {
                 Slide::create(array(
                     'name' => $request->name,
-                    'link' => $request->link
+                    'link' => $request->link,
+                    'status' => $request->status
                 ));
                 $this->setFlashData('success', 'Successfully!');
             } else {
@@ -41,7 +43,7 @@ class SliderController extends InitController
 
     public function list(Request $request)
     {
-        $listSlider = Slide::where('status', '1')->paginate(5);
+        $listSlider = Slide::where('status', '<>', null)->paginate(5);
         return view('admin.slider.list', array('listSlider' => $listSlider));
     }
 
@@ -75,6 +77,21 @@ class SliderController extends InitController
      */
     public function edit($id)
     {
+        $request = request();
+        if ($request->isMethod('post')) {
+            $validate = Slide::validate($request);
+            if ($validate->error == false) {
+                Slide::where('id', $id)->update(array(
+                    'name' => $request->name,
+                    'link' => $request->link,
+                    'status' => $request->status
+                ));
+                $this->setFlashData('success', 'Successfully!');
+            } else {
+                $this->setFlashData('fail', 'Fail!');
+                return view('admin.slider.create', array('error' => $validate, 'data' => $request));
+            }
+        }
         $slide = Slide::where('id', $id)->first();
         return view('admin.slider.edit', array('slide' => $slide));
     }

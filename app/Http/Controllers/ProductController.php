@@ -26,7 +26,7 @@ class ProductController extends InitController
      */
     public function list()
     {
-        $listProduct = Product::where('status', '<>', 0)->paginate(10);
+        $listProduct = Product::where('status', '<>', null)->paginate(10);
         return view('admin.product.list', array('listProduct' => $listProduct));
     }
 
@@ -38,6 +38,7 @@ class ProductController extends InitController
             $categoryId = $request->category_id;
             $name = $request->name;
             $avatar = $request->avatar;
+            $status = $request->status;
             $content = $request->product_content;
             $price = $request->price;
             $colors = $request->color;
@@ -56,6 +57,7 @@ class ProductController extends InitController
                 array(
                     'name'          => $name,
                     'slug'          => $this->removeSign($name, '-', true),
+                    'status'        => $status,
                     'category_id'   => $categoryId,
                     'price'         => $price,
                     'avatar'        => $avatar,
@@ -98,12 +100,12 @@ class ProductController extends InitController
      */
     public function edit($id)
     {
-        $data = Product::where('id', $id)->first();
         $request = request();
         if ($request->isMethod('post')) {
             $categoryId = $request->category_id;
             $name = $request->name;
             $avatar = $request->avatar;
+            $status = $request->status;
             $content = $request->product_content;
             $price = $request->price;
             $colors = $request->color;
@@ -121,6 +123,7 @@ class ProductController extends InitController
             Product::where('id', $id)->update(array(
                     'name'          => $name,
                     'slug'          => $this->removeSign($name, '-', true),
+                    'status'        => $status,
                     'category_id'   => $categoryId,
                     'price'         => $price,
                     'avatar'        => $avatar,
@@ -129,8 +132,8 @@ class ProductController extends InitController
                 )
             );
             $this->setFlashData('success', 'Successfully!');
-            redirect(route('product-edit', array('slug' => $data->id)));
         }
+        $data = Product::where('id', $id)->first();
         return view('admin.product.edit', array('data' => $data));
     }
 

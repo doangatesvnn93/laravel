@@ -9,5 +9,8 @@ return [
     "title" => "this is title gates",
     "admin" => array(
         "title" => "Dashboard"
+    ),
+    "commons" => array(
+        "successfully" => "Successfully"
     )
 ];

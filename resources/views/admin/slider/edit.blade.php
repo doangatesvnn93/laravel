@@ -44,6 +44,17 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">Status</div>
+                            <div class="col-sm-9">
+                                <div class="select-control">
+                                    <select class="form-control" name="status">
+                                        <option value="1" @if ($slide->status == 1)selected @endif>Active</option>
+                                        <option value="0" @if ($slide->status == 0)selected @endif>Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="text-center">
                             <button type="submit" value="SUBMIT" class="btn btn-success">SUBMIT</button>

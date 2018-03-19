@@ -8,7 +8,7 @@ class Slide extends Model
 {
     protected $table = 'g_slide';
 
-    protected $fillable = ['name', 'link'];
+    protected $fillable = ['name', 'link', 'status'];
 
     public static function validate($data)
     {

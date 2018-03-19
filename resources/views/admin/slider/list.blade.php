@@ -36,7 +36,13 @@
                                 <a href="{{ route('slider-edit', array('id' => $slide->id)) }}"> {{ $slide->name }} </a>
                             </td>
                             <td class="text-center"><img src="{{ $slide->link }}" width="100" height="70"> </td>
-                            <td class="text-center"><span class="label label-success">Active</span> </td>
+                            <td class="text-center">
+                                @if ($slide->status == 1)
+                                    <span class="label label-success">Active</span>
+                                @else
+                                    <span class="label label-danger">Inactive</span>
+                                @endif
+                            </td>
                             <td class="text-center">
                                 <a href="javascript: void(0);" class="destroy btn btn-danger">
                                     <i class="fa fa-trash" aria-hidden="true"></i>

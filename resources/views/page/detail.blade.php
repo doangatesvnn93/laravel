@@ -5,14 +5,13 @@
 @section('content')
 <div class="inner-header">
     <div class="container">
+        <div class="beta-breadcrumb font-large">
+            <a href="{{ route('landing') }}">Trang chủ</a> <span>›</span> <a href="{{ route('list') }}">Sản phẩm</a>
+        </div>
         <div class="pull-left">
-            <h6 class="inner-title">Product</h6>
+            <h6 class="inner-title">{{ $productData->name }}</h6>
         </div>
-        <div class="pull-right">
-            <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Product</span>
-            </div>
-        </div>
+
         <div class="clearfix"></div>
     </div>
 </div>
@@ -27,11 +26,10 @@
                             <img src="{{ $productData->avatar }}">
                         </div>
                     </div>
-                    <div class="col-sm-5 item-top" style="margin-top: 50px;">
+                    <div class="col-sm-8 item-top">
                         <div class="single-item-body">
-                            <p class="single-item-title">{{$productData->name}}</p>
                             <p class="single-item-price">
-                                <strong>{{number_format($productData->price)}}đ</strong>
+                                <strong class="area_price">{{ number_format($productData->price )}}đ</strong>
                             </p>
                         </div>
 
@@ -41,17 +39,17 @@
                         <div class="single-item-desc">
                             <p>{{$productData->description}}</p>
                         </div>
-                        <div class="space20">&nbsp;</div>
 
-                        <p>Màu sắc:</p>
+                        <div class="color-title">Màu sắc:</div>
                         <div class="single-item-options">
                             <?php $dataColor = json_decode($productData->color_product_data); ?>
                             @if (!empty($dataColor))
                                 @foreach($dataColor as $key => $itemColor)
-                                     <div class="col-sm-12">
-                                        <span class="chitiet @if ($key == 0)active @endif" onclick="changeColorTop('{{ $itemColor->product }}')">
-                                            <img src="{{ $itemColor->color }}" width="100" height="30"> {{ $itemColor->name }}
-                                        </span>
+                                     <div class="col-sm-6 pd0">
+                                        <div class="color-product @if ($key == 0)active @endif" onclick="changeColorTop('{{ $itemColor->product }}')">
+                                            <img src="{{ $itemColor->color }}" width="100" height="30">
+                                            <span class="name-color-product">{{ $itemColor->name }}</span>
+                                        </div>
                                      </div>
                                 @endforeach
                             @endif
@@ -69,36 +67,36 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                    <div class="col-sm-3" style="margin-top: 50px;">
-                        <div id="support_online_detail">
-                            <div class="title">Quí khách muốn mua hàng xin vui lòng liên hệ</div>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="skype:doangatesvnn93?chat" title="Nguyễn Văn Đoàn" rel="nofollow">
-                                            <img src="/themes/page/images/icons/icon-skype.jpg"> Mr Đoàn: 0164.651.8107
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="skype:doangatesvnn93?chat" title="Nguyễn Văn Đoàn" rel="nofollow">
-                                            <img src="/themes/page/images/icons/icon-skype.jpg"> Mr Đoàn: 0164.651.8107
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="skype:doangatesvnn93?chat" title="Nguyễn Văn Đoàn" rel="nofollow">
-                                            <img src="/themes/page/images/icons/icon-skype.jpg"> Mr Đoàn: 0164.651.8107
-                                        </a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    {{--<div class="col-sm-3">--}}
+                        {{--<div id="support_online_detail">--}}
+                            {{--<div class="title">Quí khách muốn mua hàng xin vui lòng liên hệ</div>--}}
+                            {{--<table>--}}
+                                {{--<tbody>--}}
+                                {{--<tr>--}}
+                                    {{--<td>--}}
+                                        {{--<a href="skype:doangatesvnn93?chat" title="Nguyễn Văn Đoàn" rel="nofollow">--}}
+                                            {{--<img src="/themes/page/images/icons/icon-skype.jpg"> Mr Đoàn: 0164.651.8107--}}
+                                        {{--</a>--}}
+                                    {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr>--}}
+                                    {{--<td>--}}
+                                        {{--<a href="skype:doangatesvnn93?chat" title="Nguyễn Văn Đoàn" rel="nofollow">--}}
+                                            {{--<img src="/themes/page/images/icons/icon-skype.jpg"> Mr Đoàn: 0164.651.8107--}}
+                                        {{--</a>--}}
+                                    {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--<tr>--}}
+                                    {{--<td>--}}
+                                        {{--<a href="skype:doangatesvnn93?chat" title="Nguyễn Văn Đoàn" rel="nofollow">--}}
+                                            {{--<img src="/themes/page/images/icons/icon-skype.jpg"> Mr Đoàn: 0164.651.8107--}}
+                                        {{--</a>--}}
+                                    {{--</td>--}}
+                                {{--</tr>--}}
+                                {{--</tbody>--}}
+                            {{--</table>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
 
                 <div class="space40">&nbsp;</div>

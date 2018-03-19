@@ -55,12 +55,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', ['as' => 'admin', 'uses' => 'AdminController@index']);
-//Sliders
+//  Sliders
     Route::match(['get', 'post'], '/admin/slider/create', ['as' => 'slider-create', 'uses' => 'SliderController@create']);
     Route::get('/admin/slider/list', ['as' => 'slider-list', 'uses' => 'SliderController@list']);
     Route::match(['get', 'post'], '/admin/slider/edit/{id}', ['as' => 'slider-edit', 'uses' => 'SliderController@edit']);
-//Products
+//  Products
     Route::match(['get', 'post'], '/admin/product/create', ['as' => 'product-create', 'uses' => 'ProductController@create']);
     Route::get('/admin/product/list', ['as' => 'product-list', 'uses' => 'ProductController@list']);
     Route::match(['get', 'post'], '/admin/product/edit/{id}', ['as' => 'product-edit', 'uses' => 'ProductController@edit']);
+
+//  Category
+    Route::get('/admin/category/list', ['as' => 'category-list', 'uses' => 'CategoryController@list']);
+    Route::match(['get', 'post'], '/admin/category/create', ['as' => 'category-create', 'uses' => 'CategoryController@create']);
+    Route::match(['get', 'post'], '/admin/category/edit/{id}', ['as' => 'category-edit', 'uses' => 'CategoryController@edit']);
 });

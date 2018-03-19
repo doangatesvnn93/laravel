@@ -8,6 +8,8 @@ class Category extends Model
 {
     protected $table = 'g_category';
 
+    protected $fillable = ['name', 'status', 'slug'];
+
     public function product()
     {
         return $this->hasMany('App\Product', 'id_type', 'id');
