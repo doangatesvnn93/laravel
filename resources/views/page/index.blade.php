@@ -21,10 +21,12 @@ Trang chủ
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
                                 <ul class="nav nav-tabs nav-type">
-                                    <li class="active"><a data-toggle="tab" href="#all">Tất cả</a></li>
+                                    <li class="active" style="width: calc(100% / {{ $listCategory->count() + 1 }});"><a data-toggle="tab" href="#all">Tất cả</a></li>
                                     @if ($listCategory)
                                         @foreach($listCategory as $cat)
-                                            <li><a data-toggle="tab" href="#menu{{$cat->id}}">{{$cat->name}}</a></li>
+                                            <li style="width: calc(100% / {{ $listCategory->count() + 1 }});">
+                                                <a data-toggle="tab" href="#menu{{$cat->id}}">{{$cat->name}}</a>
+                                            </li>
                                         @endforeach
                                     @endif
                                 </ul>

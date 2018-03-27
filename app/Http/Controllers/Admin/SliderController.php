@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Slide;
 
-class SliderController extends InitController
+class SliderController extends \App\Http\Controllers\InitController
 {
     /**
      * Display a listing of the resource.

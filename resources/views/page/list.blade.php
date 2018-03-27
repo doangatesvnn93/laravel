@@ -29,12 +29,12 @@ Danh sách sản phẩm
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
                                 <ul class="nav nav-tabs nav-type">
-                                    <li @if(!request()->cat)class="active"@endif>
+                                    <li @if(!request()->cat)class="active"@endif  style="width: calc(100% / {{ $listCategory->count() + 1 }});">
                                         <a data-toggle="tab" href="#all">Tất cả</a>
                                     </li>
                                     @if ($listCategory)
                                         @foreach($listCategory as $cat)
-                                            <li @if($cat->slug == request()->cat)class="active"@endif>
+                                            <li @if($cat->slug == request()->cat)class="active"@endif  style="width: calc(100% / {{ $listCategory->count() + 1 }});">
                                                 <a data-toggle="tab" href="#menu{{$cat->id}}">{{$cat->name}}</a>
                                             </li>
                                         @endforeach

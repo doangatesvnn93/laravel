@@ -56,10 +56,10 @@
                             <div class="col-sm-12">
                                 <div id="button_buy">
 
-                                    <a style="margin-left:0" href="javascript void(0);" class="btn_large_red">
+                                    <a style="margin-left:0" href="javascript: void(0);" class="btn_large_red">
                                         <span>Đặt mua ngay</span> Giao hàng tận nơi nhanh chóng
                                     </a>
-                                    <a href="javascript void(0);" class="btn_large_orange">
+                                    <a href="javascript: void(0);" class="btn_large_orange" onclick="addToCart('{{ $productData->id }}')">
                                         <span>Cho vào giỏ</span> Cho vào giỏ để chọn tiếp
                                     </a>
                                 </div>

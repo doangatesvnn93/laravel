@@ -293,12 +293,17 @@
 
 .alert-message {
     position: fixed;
-    top: 30px;
+    top: 50px;
     z-index: 99999;
-    width: 20%;
+    width: 40%;
     text-align: center;
     overflow: hidden;
-    margin-left: 45%;
+    margin-left: 30%;
+    background: #e6002c;
+    border: 1px solid #e6002c;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .fixNav {
@@ -314,7 +319,7 @@
 }
 
 .cart-body {
-    z-index: 999;
+    z-index: 99999;
 }
 
 .inner-header {
@@ -414,6 +419,12 @@ i.icons.icon-sright-tel {
 i.icons.icon-sright-up {
     width: 38px !important;
     background-position: -2px -147px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .cart-body {
+        right: 115px;
+    }
 }
 
 @media only screen and (max-width: 768px) {

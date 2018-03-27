@@ -13,24 +13,16 @@
             <div class="rss newsletter">
                 <h2>Đăng ký nhận tin</h2>
                 <p class="desc">Những thông tin về sản phẩm mới, sự kiện và khuyến mãi</p>
-
-                <form action="https://hondaxemay.com.vn/?na=s" onsubmit="return newsletter_check(this)" method="post">
-
-                    <input type="hidden" name="nr" value="widget">
-                    <input class="newsletter-email" type="email" required="" name="ne" value="" onclick="if (this.defaultValue==this.value) this.value=''" onblur="if (this.value=='') this.value=this.defaultValue" placeholder="Nhập email của bạn">
-                    <div class="select-wrp">
-                        <select name="np1">
-                            <option value="" disabled="" selected="" hidden="">Chọn mục bạn muốn nhận tin</option>
-                            <option value="Honda Việt Nam">Honda Việt Nam</option>
-                            <option value="Honda Xe Máy">Honda Xe Máy</option>
-                            <option value="Honda Ôtô">Honda Ôtô</option>
-                        </select>
-                        <input class="newsletter-submit" type="submit" value="" style="display:none">
-                        <a href="javascript:;" onclick="$('.newsletter-submit').trigger('click')"></a>
+                <input type="hidden" name="nr" value="widget">
+                <div class="input-group" style="width: 100%">
+                    <div class="pull-left col-sm-9 pd0">
+                        <input class="newsletter-email" type="email" required="" id="input-email-subscribe" name="email" placeholder="Nhập email của bạn">
                     </div>
-
-                </form>
-
+                    <div class="pull-left col-sm-3 pd0">
+                        <a class="btn btn-danger button-subscribe" href="javascript: void(0);">Đăng ký</a>
+                    </div>
+                    <div class="col-sm-12 pd0 has-error email-error" style="display: none;"></div>
+                </div>
             </div>
         </div>
     </div>

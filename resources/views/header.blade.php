@@ -25,32 +25,44 @@
                         <li>
                             <div class="beta-comp">
                                 <div class="cart">
-                                    <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i
-                                                class="fa fa-chevron-down"></i></div>
-                                    <div class="beta-dropdown cart-body">
-                                        <div class="cart-item">
-                                            <div class="media">
-                                                <a class="pull-left" href="#"><img
-                                                            src="/themes/page/images/products/cart/1.png" alt=""></a>
-                                                <div class="media-body">
-                                                    <span class="cart-item-title">Sample Woman Top</span>
-                                                    <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                                                    <span class="cart-item-amount">1*<span>$49.50</span></span>
+                                    <div class="beta-select">
+                                        <i class="fa fa-shopping-cart"></i> Giỏ hàng <span id="text-empty-cart">@if(!session()->has('cart'))
+                                                (Trống)</span> @endif
+                                        <i class="fa fa-chevron-down"></i>
+                                    </div>
+
+                                    <div class="@if (session()->has('cart') )beta-dropdown  cart-body @endif" id="cart-body">
+                                        @if (session()->has('cart'))
+                                            @php $totalAmount = 0; @endphp
+                                            @foreach(session()->get('cart') as $key => $item)
+                                                @php $totalAmount += $item['price'] * $item['qty']; @endphp
+                                                <div class="cart-item">
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#"><img src="{{ $item['avatar'] }}"></a>
+                                                        <div class="media-body">
+                                                            <span class="cart-item-title">{{ $item['name'] }}</span>
+                                                            <span class="cart-item-options">Số lượng: {{ $item['qty'] }}</span>
+                                                            <span class="cart-item-amount">Số tiền : {{ number_format($item['price'] * $item['qty']) }}
+                                                                đ</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            <div class="cart-caption">
+                                                <div class="cart-total text-right">Tổng tiền: <span
+                                                            class="cart-total-value">{{ number_format($totalAmount) }}
+                                                        đ</span></div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="center">
+                                                    <div class="space10">&nbsp;</div>
+                                                    <a href="{{ route('checkout') }}"
+                                                       class="beta-btn primary text-center">
+                                                        Đặt hàng <i class="fa fa-chevron-right"></i>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="cart-caption">
-                                            <div class="cart-total text-right">Tổng tiền: <span
-                                                        class="cart-total-value">$34.55</span></div>
-                                            <div class="clearfix"></div>
-
-                                            <div class="center">
-                                                <div class="space10">&nbsp;</div>
-                                                <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i
-                                                            class="fa fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
+                                        @endif
                                     </div>
                                 </div> <!-- .cart -->
                             </div>
@@ -101,6 +113,7 @@
                                 </div>
                             </div>
                         </li>
+                        <li><a href="{{ route('checkout') }}">Thanh toán</a></li>
                         <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                         <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                     </ul>
@@ -136,6 +149,9 @@
                             @endforeach
                         </ul>
                         <div class="clearfix"></div>
+                    </li>
+                    <li>
+                        <a href="{{ route('about') }}">Chính sách giao hàng</a>
                     </li>
                     <li>
                         <a href="{{ route('about') }}">Giới thiệu</a>

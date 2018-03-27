@@ -31,21 +31,21 @@ String.prototype.capitalize = function() {
 var sidebar = {
     name: '__sidebar',
     init: function() {
-        $('.button-toggle').bind('click', function() {
+        jQuery('.button-toggle').bind('click', function() {
             var self = this, show = 0;
-            if ($(self).hasClass('button-toggle-open') == true) {
-                $(self).removeClass('button-toggle-open');
-                $(self).find('div').addClass('button-toggle-close-icon')
+            if (jQuery(self).hasClass('button-toggle-open') == true) {
+                jQuery(self).removeClass('button-toggle-open');
+                jQuery(self).find('div').addClass('button-toggle-close-icon')
                     .removeClass('button-toggle-open-icon');
-                $('#main-content').addClass('has-sidebar');
-                $('.sidebar .sidebar-container').show();
+                jQuery('#main-content').addClass('has-sidebar');
+                jQuery('.sidebar .sidebar-container').show();
                 show = 1;
             } else {
-                $(self).addClass('button-toggle-open');
-                $(self).find('div').addClass('button-toggle-open-icon')
+                jQuery(self).addClass('button-toggle-open');
+                jQuery(self).find('div').addClass('button-toggle-open-icon')
                     .removeClass('button-toggle-close-icon');
-                $('#main-content').removeClass('has-sidebar');
-                $('.sidebar .sidebar-container').hide();
+                jQuery('#main-content').removeClass('has-sidebar');
+                jQuery('.sidebar .sidebar-container').hide();
                 show = 0;
             }
             //commons.set(sidebar.name, show, 30);
@@ -57,12 +57,12 @@ var checkbox = {
     checked: 0,
     init: function(a, b, c) {
         var self = this;
-        $(a).change(function(i) {
+        jQuery(a).change(function(i) {
             if (this.checked == true) {
-                $(b).prop('checked', true);
+                jQuery(b).prop('checked', true);
                 self.checked = b.length;
             } else {
-                $(b).prop('checked', false);
+                jQuery(b).prop('checked', false);
                 self.checked = 0;
             }
 
@@ -74,13 +74,13 @@ var checkbox = {
         var length = b.length;
         b.change(function() {
             if (this.checked == false) {
-                $(a).prop('checked', false);
+                jQuery(a).prop('checked', false);
                 self.checked--;
             } else {
                 self.checked++;
             }
             if (self.checked == length) {
-                $(a).prop('checked', true);
+                jQuery(a).prop('checked', true);
             }
 
             if (typeof(c) == 'function') {
@@ -144,15 +144,15 @@ var appStep = {
         return ok;
     },
     goStep: function(i) {
-        var step = $('#step-' + parseInt(i + 1));
+        var step = jQuery('#step-' + parseInt(i + 1));
         if (step.length > 0) {
-            $('#step-' + i).find('.btn-step').hide();
-            $(step).addClass('active');
+            jQuery('#step-' + i).find('.btn-step').hide();
+            jQuery(step).addClass('active');
         }
         //commons.checkScreenHeight();
     }
 };
-
+var gatesLoading = jQuery('#loading-container');
 var commons = {
     isUsername: function(username) {
         username = username.trim();
@@ -164,10 +164,9 @@ var commons = {
         var commas = typeof(commas) == 'undefined' ? ',' : commas;
         var num = str.replaceAll(commas, '');
         num = num.replace(/\D/g, '')
-        return num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1" + commas);
+        return num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "jQuery1" + commas);
     },
     refresh: function(cache) {
-        gioLoading.show();
         var type = typeof(cache) == 'undefined' ? true : cache;
         window.location.reload(cache);
     },
@@ -181,7 +180,7 @@ var commons = {
         window.location.href = url;
     },
     ajax: function(params) {
-        $.ajax({
+        jQuery.ajax({
             type: params.type,
             url: params.url,
             data: params.data,
@@ -216,22 +215,22 @@ var commons = {
         });
     },
     checkScreenHeight: function() {
-        var height = $(window).height(), header = 110, footer = 102,
-            mainHeight = $('#main-content').height(), minHeight = 500;
-        if ($('#main-content').hasClass('not-login')) {
+        var height = jQuery(window).height(), header = 110, footer = 102,
+            mainHeight = jQuery('#main-content').height(), minHeight = 500;
+        if (jQuery('#main-content').hasClass('not-login')) {
             header = 56;
         }
         height = (height < minHeight) ? minHeight : height;
         height = height + (footer - header);
-        $('body').css('height', height).css('overflow', 'hidden');
+        jQuery('body').css('height', height).css('overflow', 'hidden');
         if ((header + mainHeight) < height - footer) {
-            $('.footer').parent().css('position', 'absolute')
+            jQuery('.footer').parent().css('position', 'absolute')
                 .css('bottom', 0);
         } else {
-            $('.footer').parent().removeAttr('style');
-            $('.main-content').css('height', height - footer);
+            jQuery('.footer').parent().removeAttr('style');
+            jQuery('.main-content').css('height', height - footer);
         }
-        $('.footer').removeClass('hidden');
+        jQuery('.footer').removeClass('hidden');
     },
     alert: {
         success: null,
@@ -241,17 +240,17 @@ var commons = {
             }
 
             if (commons.alert.success === true) {
-                $('#flash-messenger').removeClass('alert-warning')
+                jQuery('#flash-messenger').removeClass('alert-warning')
                     .addClass('alert-success');
             } else if (commons.alert.success === false) {
-                $('#flash-messenger').removeClass('alert-warning')
+                jQuery('#flash-messenger').removeClass('alert-warning')
                     .addClass('alert-danger');
             }
 
             if (typeof(message) != 'undefined') {
-                $('#flash-messenger #alert-content').html('<strong>' + message + '</strong>');
+                jQuery('#flash-messenger #alert-content').html('<strong>' + message + '</strong>');
             }
-            $('#flash-messenger').show()
+            jQuery('#flash-messenger').show()
                 .unbind('click')
                 .click(function() {
                     commons.alert.hide();
@@ -263,11 +262,11 @@ var commons = {
                 }
             }, seconds);
         },
-        hide: function() {$('#flash-messenger').fadeOut('slow');}
+        hide: function() {jQuery('#flash-messenger').fadeOut('slow');}
     },
     loading: {
-        show: function() {gioLoading.show();},
-        hide: function() {gioLoading.hide()}
+        show: function() {gatesLoading.show();},
+        hide: function() {gatesLoading.hide()}
     },
     submitForm: function() {
         this.loading.show();
@@ -276,14 +275,14 @@ var commons = {
     confirmDialog: {
         callback: null,
         show: function(title, message, ok) {
-            var dialog = $('#confirm-dialog-modal');
-            $(dialog).find('.modal-title').html(title);
-            $(dialog).find('.modal-body').html(message);
-            $(dialog).modal('toggle');
+            var dialog = jQuery('#confirm-dialog-modal');
+            jQuery(dialog).find('.modal-title').html(title);
+            jQuery(dialog).find('.modal-body').html(message);
+            jQuery(dialog).modal('toggle');
             this.callback = ok;
         },
         hide: function() {
-            $('#confirm-dialog-modal').modal('toggle');
+            jQuery('#confirm-dialog-modal').modal('toggle');
             this.callback = null;
         },
         ok: function() {
@@ -328,7 +327,7 @@ var commons = {
         return false;
     },
     removeSign: function(str) {
-        str = str.replace(/^\s+|\s+$/g, '');
+        str = str.replace(/^\s+|\s+jQuery/g, '');
         var from = "ÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪáàạảãăắằặẳẵâấầậẩẫóòọỏõÓÒỌỎÕôốồộổỗÔỐỒỘỔỖơớờợởỡƠỚỜỢỞỠéèẹẻẽÉÈẸẺẼêếềệểễÊẾỀỆỂỄúùụủũÚÙỤỦŨưứừựửữƯỨỪỰỬỮíìịỉĩÍÌỊỈĨýỳỵỷỹÝỲỴỶỸĐđÑñÇç·/_,:;";
         var to   = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaooooooooooooooooooooooooooooooooooeeeeeeeeeeeeeeeeeeeeeeuuuuuuuuuuuuuuuuuuuuuuiiiiiiiiiiyyyyyyyyyyddnncc------";
 
@@ -411,7 +410,7 @@ var commons = {
         return temp;
     },
     logout: function() {
-        var url = $('#logout-url').val();
+        var url = jQuery('#logout-url').val();
         if (typeof(url) == 'undefined') {
             return false;
         }
@@ -424,8 +423,8 @@ var commons = {
         commons.gotoUrl(url);
     },
     scrollTo: function(id) {
-        $('html, body').animate({
-                scrollTop: $('#' + id).offset().top},
+        jQuery('html, body').animate({
+                scrollTop: jQuery('#' + id).offset().top},
             'slow');
     },
     date: {
@@ -626,56 +625,72 @@ var commons = {
         } else {
             return false;
         }
+    },
+    alertFlashMessage: function(status, message) {
+        var element = jQuery('#session-flash'),
+            html = '<div class="alert alert-success alert-message">' + message + '</div>';
+        if (status == 'fail') {
+            html = '<div class="alert alert-success alert-message">' + message + '</div>'
+        }
+        element.html(html);
+        element.show();
+        setTimeout(function () {
+            jQuery('#session-flash').empty().hide();
+        }, 2000);
+    },
+    isEmail: function (email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
     }
 };
 
-$(document).ready(function() {
-    var sidebarShow = commons.get(sidebar.name), mainContent = $('#main-content');
+jQuery(document).ready(function() {
+    var sidebarShow = commons.get(sidebar.name), mainContent = jQuery('#main-content');
     if (sidebarShow != '' && sidebarShow == 0) {
-        $('.sidebar-container').hide();
-        if ($(mainContent).hasClass('has-sidebar') == true) {
-            $(mainContent).removeClass('has-sidebar');
+        jQuery('.sidebar-container').hide();
+        if (jQuery(mainContent).hasClass('has-sidebar') == true) {
+            jQuery(mainContent).removeClass('has-sidebar');
         }
     }
 
     /** sidebar **/
     sidebar.init();
 
-    var actionsToolbox = $('#actions-toolbox');
+    var actionsToolbox = jQuery('#actions-toolbox');
     if (actionsToolbox.length > 0) {
-        var a = $(actionsToolbox).offset().top;
-        $('.main-content').scroll(function () {
-            var t = $(this).scrollTop();
+        var a = jQuery(actionsToolbox).offset().top;
+        jQuery('.main-content').scroll(function () {
+            var t = jQuery(this).scrollTop();
             if ((t + 110) >= a) {
-                $(actionsToolbox).addClass('actions-toolbox-fixed').css('width', $('.main-content').width());
+                jQuery(actionsToolbox).addClass('actions-toolbox-fixed').css('width', jQuery('.main-content').width());
             } else {
-                $(actionsToolbox).removeClass('actions-toolbox-fixed').removeAttr('style');
+                jQuery(actionsToolbox).removeClass('actions-toolbox-fixed').removeAttr('style');
             }
         });
     }
 
-    $('button.button-default').each(function(e) {
+    jQuery('button.button-default').each(function(e) {
         var self = this;
-        var href = $(self).attr('data-href');
+        var href = jQuery(self).attr('data-href');
         if (typeof(href) != 'undefined') {
-            $(self).click(function() {
+            jQuery(self).click(function() {
                 commons.gotoUrl(href);
             });
         }
     });
 
-    $('a.loader').click(function() {
-        gioLoading.show();
+    jQuery('a.loader').click(function() {
+        gatesLoading.show();
     });
 
-    $('form.form-default').submit(function() {
+    jQuery('form.form-default').submit(function() {
         return commons.submitForm();
     });
 
-    var ping = $('#core-ping-server').val();
+    var ping = jQuery('#core-ping-server').val();
     if (typeof(ping) != 'undefined') {
         setInterval(function()  {
-            $.getJSON(ping + '?t=' + (new Date).getTime());
+            jQuery.getJSON(ping + '?t=' + (new Date).getTime());
         }, 10 * 1000);
     }
 });

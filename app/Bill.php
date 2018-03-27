@@ -8,6 +8,8 @@ class Bill extends Model
 {
     protected $table = 'g_bills';
 
+    protected $fillable = ['name', 'email', 'gender', 'address', 'phone', 'note', 'total_amount', 'data', 'type_payment'];
+
     public function billDetail()
     {
         return $this->hasMany('App\BillDetail', 'id_bill', 'id');

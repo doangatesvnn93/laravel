@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use Illuminate\Http\Request;
 
-class CategoryController extends InitController
+class CategoryController extends \App\Http\Controllers\InitController
 {
     /**
      * Display a listing of the resource.

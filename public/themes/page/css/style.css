@@ -1427,7 +1427,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 .your-order-head {
     height: 55px;
     background-color: #f8f8f8;
-    padding: 0 40px;
+    padding: 0 15px;
     border-top: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8
 }
@@ -1612,7 +1612,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 
 .cart-body {
     position: absolute;
-    right: 15px;
+    right: 230px;
     z-index: 100;
     background: #fff;
     border: 1px solid #e1e1e1;
@@ -4765,12 +4765,13 @@ tfoot td a i {
     background: none;
     border: 1px solid #4e5862;
     color: #adbac8;
-    height: 37px;
+    height: 40px;
     padding: 0 15px
 }
 
 #footer.color-div button {
-    border: 1px solid gray;
+    border: none;
+    border-radius: 0px;
 }
 
 #footer button:hover {
@@ -5835,7 +5836,7 @@ li.box-port-filter {
     left: 0px;
     background: #fff;
     padding: 26px 0px 30px 0px;
-    z-index: 9999;
+    z-index: 99999;
 
 }
 
@@ -5906,5 +5907,9 @@ li.box-port-filter {
     border-radius: none !important;
     border-left: 1px solid #ddd !important;
     border-right: 1px solid #ddd !important;
+}
+.button-subscribe {
+    border-radius: 0px;
+    border: 0px;
 }
 
