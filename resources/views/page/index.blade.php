@@ -12,7 +12,6 @@ Trang chủ
         <div class="container">
             <div id="content" class="space-top-none">
                 <div class="main-content">
-                    <div class="space60">&nbsp;</div>
                     <div class="row">
                         <div class="col-sm-12">
                             <h1>Lựa chọn phong cách riêng của bạn</h1>
@@ -38,22 +37,23 @@ Trang chủ
                                         @if ($listProduct)
                                             @foreach ($listProduct as $new)
                                                 <div class="item content-loai-xe-364" style="display: inline-block;">
-                                                    <a href="{{route('detail', ['slug' => $new->slug])}}">
-                                                        <img class="hover-me" src="{{$new->avatar ? $new->avatar : ""}}" alt="{{$new->name}}"></a>
+                                                    <a href="{{ route('detail', ['slug' => $new->slug]) }}">
+                                                        <img class="hover-me" src="{{ $new->avatar ? $new->avatar : "" }}" alt="{{ $new->name }}"></a>
                                                     <div class="desc">
                                                         <p class="name">{{$new->name}}</p>
-                                                        <p class="price">Giá từ<span> <strong>{{number_format($new->price)}} VNĐ</strong></span></p>
-                                                        <a href="javascript: void(0);">Xem chi tiết <i
-                                                                    class="fa fa-angle-right"></i></a>
+                                                        <p class="price">Giá từ<span> <strong>{{ number_format($new->price) }} VNĐ</strong></span></p>
+                                                        <a href="javascript: void(0);">Xem chi tiết
+                                                            <i class="fa fa-angle-right"></i>
+                                                        </a>
                                                     </div>
                                                     <div class="item-hovered">
                                                         <img class="img-hovered"
-                                                             src="{{$new->avatar ? $new->avatar : ""}}"
-                                                             alt="{{$new->name}}">
+                                                             src="{{ $new->avatar ? $new->avatar : "" }}"
+                                                             alt="{{ $new->name }}">
                                                         <div class="more">
-                                                            <p class="name">{{$new->name}}</p>
-                                                            <p class="price">Giá từ <strong>{{number_format($new->price)}} VNĐ</strong></p>
-                                                            <a class="btn" href="{{route('detail', ['slug' => $new->slug])}}">
+                                                            <p class="name">{{ $new->name }}</p>
+                                                            <p class="price">Giá từ <strong>{{ number_format($new->price) }} VNĐ</strong></p>
+                                                            <a class="btn" href="{{ route('detail', ['slug' => $new->slug]) }}">
                                                                 <img src="/themes/page/images/icons/btn-more.png" alt="">
                                                             </a>
                                                         </div>
@@ -64,7 +64,7 @@ Trang chủ
                                     </div>
                                     @if ($listCategory)
                                         @foreach($listCategory as $cat)
-                                            <div id="menu{{$cat->id}}" class="tab-pane fade">
+                                            <div id="menu{{ $cat->id }}" class="tab-pane fade">
                                                 @if ($listProduct)
                                                     @foreach ($listProduct as $new)
                                                         @if ($cat->id == $new->category_id)
@@ -84,7 +84,7 @@ Trang chủ
                                                                     <div class="more">
                                                                         <p class="name">{{$new->name}}</p>
                                                                         <p class="price">Giá từ <strong>{{number_format($new->price)}} VNĐ</strong></p>
-                                                                        <a class="btn" href="javascript: void(0);">
+                                                                        <a class="btn" href="{{ route('detail', ['slug' => $new->slug]) }}">
                                                                             <img src="/themes/page/images/icons/btn-more.png" alt="">
                                                                         </a>
                                                                     </div>

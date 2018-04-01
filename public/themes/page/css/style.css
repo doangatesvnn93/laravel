@@ -39,7 +39,7 @@ Version: 1.0
 	16. BETA SLIDES TWITTER
 	17. BETA MEDIA QUERY
 	18. FOOTER SECTION
-        
+
 
 ============================================================================= */
 
@@ -802,7 +802,7 @@ ul li:hover, ol li:hover {
 }
 
 strong {
-    color: #000
+    /*color: #000*/
 }
 
 input[type="text"], input[type="email"], input[type="url"], textarea {
@@ -1579,6 +1579,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 
 .beta-comp {
     float: left;
+    position: relative;
 }
 
 /* ==========================================================================
@@ -1737,8 +1738,8 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 
 #searchsubmit {
     position: absolute;
-    right: 6px;
-    top: 0;
+    right: 15px;
+    top: 0px;
     bottom: 0;
     border: none;
     background: none
@@ -5908,8 +5909,315 @@ li.box-port-filter {
     border-left: 1px solid #ddd !important;
     border-right: 1px solid #ddd !important;
 }
+
 .button-subscribe {
     border-radius: 0px;
     border: 0px;
 }
 
+.list-product {
+    position: absolute;
+    top: 50px;
+    background: #fff;
+    z-index: 99;
+    width: 218px;
+    border: 1px solid #e2e2e2;
+}
+
+.list-product ul.list-item {
+    list-style-type: none;
+}
+
+.list-product ul li {
+    width: 100%;
+    margin-right: 0px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.wrap-suggestion:after, .wrap-suggestion:before {
+    bottom: 100%;
+    left: 80px;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+
+.wrap-suggestion:before {
+    border-color: rgba(218, 218, 218, 0);
+    border-bottom-color: #dadada;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+.wrap-suggestion:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.wrap-suggestion {
+    display: block;
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    position: absolute;
+    width: 300px;
+    top: 50px;
+    z-index: 99;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.wrap-suggestion li {
+    display: block;
+    background: #fff;
+    overflow: hidden;
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.wrap-suggestion li a {
+    display: block;
+    overflow: initial;
+    padding: 6px;
+    color: #333;
+    font-size: 12px;
+    line-height: 1;
+    height: auto;
+}
+
+.wrap-suggestion li a img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 6px 6px 0;
+}
+
+.wrap-suggestion li a h3 {
+    display: block;
+    width: auto;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 2;
+}
+
+.wrap-suggestion li a span.price {
+    font-size: 12px;
+    color: #c70100;
+    float: none;
+}
+
+.textarea-comment {
+    height: 130px;
+    border-radius: 0px;
+    padding: 5px;
+}
+
+.wrap_comment .boxemotion {
+    overflow: visible;
+    position: relative;
+}
+
+.wrap_comment .motionsend {
+    display: block;
+    overflow: hidden;
+    padding: 8px 0px;
+}
+
+.wrap_comment .cmt_right {
+    float: right;
+    margin-right: 5px;
+}
+
+.wrap_comment .motionsend button, .wrap_comment .motionsend a.btnSend {
+    padding: 5px 25px;
+    height: 20px;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #288ad6;
+    border-radius: 4px;
+    background: #288ad6;
+    margin: 0;
+}
+
+.wrap_comment .totalcomment {
+    float: left;
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.wrap_comment .listcomment {
+    display: block;
+    overflow: visible;
+    background: #fff;
+    margin: 20px 0;
+    padding-top: 20px;
+}
+
+.wrap_comment .edtCmt textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dadada;
+    border-radius: 4px 4px 0 0;
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+
+.wrap_comment .listcomment li {
+    display: block;
+    overflow: visible;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.wrap_comment .rowuser {
+    float: left;
+    overflow: visible;
+}
+
+.wrap_comment .rowuser a {
+    float: left;
+    overflow: visible;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    cursor: default;
+}
+
+.wrap_comment .edtCmt {
+    border-radius: 4px;
+    border: 1px solid #dadada;
+    overflow: hidden;
+}
+
+.wrap_comment .rowuser a div {
+    float: left;
+    width: 25px;
+    background: #ddd;
+    margin-right: 7px;
+    text-align: center;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 600;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .2);
+}
+
+.wrap_comment .question {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    clear: both;
+    float: none;
+    width: auto;
+}
+
+.wrap_comment {
+    font: 14px/18px Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+
+.wrap_comment .actionuser {
+    display: block;
+    height: 34px;
+    position: relative;
+    margin: -5px 10px 0 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+}
+
+.wrap_comment .actionuser .time {
+    float: left;
+    padding: 5px 0;
+    font-size: 13px;
+    color: #999;
+    position: relative;
+}
+
+.wrap_comment .icon-user {
+    position: absolute;
+    right: 25px;
+    top: 7px;
+    color: #4a90e2;
+}
+
+.error-comment-textarea, error-comment-username {
+    padding: 10px;
+}
+
+.wrap_comment .rowuser a strong {
+    float: left;
+    overflow: hidden;
+    line-height: 22px;
+    margin-top: 2px;
+    text-transform: capitalize;
+}
+
+.wrap_comment .actionuser .time:before {
+    float: left;
+    content: '•';
+    color: #999;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.wrap_comment .ajaxcomment {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9;
+}
+
+.wrap_comment .wrap_popup_success {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 210px;
+    max-width: 640px;
+    margin: 10% auto 0;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.wrap_comment .iconcom-success {
+    background-position: -25px -45px;
+    width: 27px;
+    height: 27px;
+    display: block;
+    margin: 10px auto;
+
+}
+
+[class^="iconcom-"], [class*="iconcom-"] {
+    background-image: url("/themes/page/images/icons/commentmobile@2x.png");
+    background-size: 270px 128px;
+    background-repeat: no-repeat;
+    line-height: 30px;
+    vertical-align: middle;
+}

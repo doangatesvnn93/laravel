@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bill;
+use App\Comment;
 use App\Product;
 use App\Slide;
 use App\Category;
@@ -35,9 +36,12 @@ class PageController extends InitController
             ->where('status', 1)
             ->limit(3)
             ->get();
+        if ($productData->id)
+        $listComment = Comment::where('product_id', $productData->id)->orderBy('id', 'DESC')->get();
         $data = [
             'productData'     => $productData,
-            'listProductRelate' => $listProductRelate
+            'listProductRelate' => $listProductRelate,
+            'listComment'       => $listComment
         ];
         return view('page.detail', $data);
     }
@@ -154,5 +158,66 @@ class PageController extends InitController
     public function subscribed()
     {
         return view('page.subscribed');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = request('keyword', null);
+        $keyword = $keyword ? rawurldecode($keyword) : $keyword;
+        $data = Product::where('name', 'like', "%$keyword%")->limit(5)->get();
+        $response = array(
+            'status'    => 'RESULT_OK',
+            'data'      => array()
+        );
+        if ($data) {
+            foreach ($data as $k => $v) {
+                $response['data'][] = array(
+                    'id'        => $v->id,
+                    'name'      => $v->name,
+                    'avatar'    => $v->avatar,
+                    'price'     => $v->price,
+                    'link'       => route('detail', array('slug' => $v->slug))
+                );
+            }
+        }
+        return response($response);
+    }
+
+    public function comment(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $numberRecaptcha = session()->get('recaptcha', 0);
+            $numberRecaptcha++;
+            session()->put('recaptcha', $numberRecaptcha);
+            $username = trim(request('username', null));
+            $comment = trim(request('comment', null));
+            $productId = request('product_id', 0);
+            $response = array(
+                'status'    => 'RESULT__NOT_OK',
+                'recaptcha' => 0,
+                'data' => []
+            );
+            $response['number_recaptcha'] = $numberRecaptcha;
+            if ($numberRecaptcha > 3) {
+                $response['recaptcha'] = 1;
+                session()->put('commentRecaptch', 1);
+            }
+            if ($username) {
+                session()->put('username', $username);
+                if ($comment && $productId) {
+                    $data = array(
+                        'product_id' => $productId,
+                        'comment'    => $comment,
+                        'username'   => $username
+                    );
+                    Comment::create($data);
+                    $data['created_at'] = date('Y-m-d H:i:s:');
+                    $data['count_comment'] = Comment::where('product_id', $productId)->count();
+                    $response['status'] = 'RESULT_OK';
+                    $response['data'] = $data;
+                    return response($response);
+                }
+            }
+        }
     }
 }

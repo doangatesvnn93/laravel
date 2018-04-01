@@ -101,6 +101,7 @@ class ProductController extends \App\Http\Controllers\InitController
     public function edit($id)
     {
         $request = request();
+        $data = Product::where('id', $id)->first();
         if ($request->isMethod('post')) {
             $categoryId = $request->category_id;
             $name = $request->name;
@@ -132,8 +133,8 @@ class ProductController extends \App\Http\Controllers\InitController
                 )
             );
             $this->setFlashData('success', 'Successfully!');
+            redirect(route('product-edit', $data));
         }
-        $data = Product::where('id', $id)->first();
         return view('admin.product.edit', array('data' => $data));
     }
 

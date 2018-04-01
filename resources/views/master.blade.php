@@ -32,16 +32,6 @@
     <a href="tel:+841646518107" target="_blank"><i class="icons icon-sright-tel"></i></a>
     <a href="javascript: gotoTop();" target="_blank"><i class="icons icon-sright-up"></i></a>
 </div>
-<div id="session-flash">
-    @if (session('status'))
-        @if (session('status') == 'success')
-            <div class="alert alert-success alert-message">{{session('flash-message')}}</div>
-        @endif
-        @if (session('status') == 'fail')
-            <div class="alert alert-warning alert-message">{{session('flash-message')}}</div>
-        @endif
-    @endif
-</div>
 <div id="cart-fixed" onclick="location.href='{{ route('checkout') }}'" @if (!session('cart'))style="display: none" @endif>
     <img src="/themes/page/images/icon_cart_fixed.png" alt="">
     <a href="{{ route('checkout') }}">Giỏ hàng của bạn</a>
@@ -69,6 +59,7 @@
 <script src="/themes/page/js/waypoints.min.js"></script>
 <script src="/themes/page/js/wow.min.js"></script>
 <script src="/themes/page/less/less.min.js" ></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <!--customjs-->
@@ -87,9 +78,6 @@
                 }
             }
         );
-        // setTimeout(function () {
-        //     $('.alert-message').empty().hide();
-        // }, 2000);
     });
 
     function addToCart(id) {
@@ -162,10 +150,53 @@
             jQuery('.email-error').html('Emai không đúng định dạng').show();
             jQuery('#input-email-subscribe').focus();
         }
-    }
+    };
+
+    var searchProduct = function (keyword) {
+        if (keyword) {
+            jQuery.ajax({
+                type: 'GET',
+                url: '{{ route('search') }}',
+                data: {
+                    keyword: keyword,
+                    '_token': '{{ csrf_token() }}'
+                },
+
+                success: function(response) {
+                    html = '';
+                    if (response.status == 'RESULT_OK') {
+                        var data = response.data;
+                        for (var i in data){
+                            html += '<li>'
+                                        + '<a href="' + data[i].link + '">'
+                                            + '<img src="' + data[i].avatar + '">'
+                                            + '<h3>' + data[i].name + '</h3>'
+                                            + '<span class="price">' + commons.addCommas(data[i].price) + '₫</span>'
+                                            + '<cite style="font-style: normal; text-decoration: line-through"></cite>'
+                                        + '</a>'
+                                    + '</li>';
+                        }
+                        jQuery('.wrap-suggestion').html(html);
+                        jQuery('.wrap-suggestion').show();
+                    }
+
+                }
+            })
+        }
+    };
+
     jQuery(document).ready(function () {
         jQuery(document).on('click', '.button-subscribe', function () {
             subscribe();
+        })
+        jQuery(document).on('keyup', '#search-product', function () {
+            var keyword = jQuery(this).val();
+            if (keyword == '') {
+                jQuery('.wrap-suggestion').hide();
+            }
+            if (keyword  && keyword.length > 1) {
+                searchProduct(keyword);
+            }
         })
     });
 </script>

@@ -15,11 +15,14 @@
                 <div class="pull-right auto-width-right">
                     <ul class="top-details menu-beta l-inline">
                         <li>
-                            <div class="beta-comp">
-                                <form role="search" method="get" id="searchform" action="/">
-                                    <input type="text" value="" name="s" id="s" placeholder="Bạn đang tìm gì..."/>
-                                    <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-                                </form>
+                            <div class="form-search">
+                                <div class="beta-comp">
+                                    <form role="search" method="get" id="searchform" action="/">
+                                        <input type="text" value="" name="s" id="search-product" placeholder="Bạn đang tìm gì..."/>
+                                        <button class="fa fa-search" type="button" id="searchsubmit" onclick="searchProduct()"></button>
+                                    </form>
+                                </div>
+                                <ul class="wrap-suggestion" style="display: none;"></ul>
                             </div>
                         </li>
                         <li>

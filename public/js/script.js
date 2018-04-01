@@ -164,7 +164,7 @@ var commons = {
         var commas = typeof(commas) == 'undefined' ? ',' : commas;
         var num = str.replaceAll(commas, '');
         num = num.replace(/\D/g, '')
-        return num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "jQuery1" + commas);
+        return num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1" + commas);
     },
     refresh: function(cache) {
         var type = typeof(cache) == 'undefined' ? true : cache;

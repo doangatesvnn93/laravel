@@ -36,6 +36,9 @@
             <li>
                 <a href="{{ route('category-list') }}"><i class="fa fa-wrench fa-fw"></i> Category</a>
             </li>
+            <li>
+                <a href="{{ route('comment-list') }}"><i class="fa fa-comments fa-fw"></i> Comments</a>
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

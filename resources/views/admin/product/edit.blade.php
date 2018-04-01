@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="form-group mgt-10">
                                     <div class="col-sm-2">Content</div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <textarea name="product_content" class="form-control my-editor" cols="30" rows="15">{{ $data->content }}</textarea>
                                     </div>
                                 </div>
@@ -235,7 +235,8 @@
                 "insertdatetime media nonbreaking save table contextmenu directionality",
                 "emoticons template paste textcolor colorpicker textpattern"
             ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+            fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+            toolbar: "insertfile undo redo | styleselect | bold italic strikethrough forecolor backcolor fontselect fontsizeselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
             relative_urls: false,
             file_browser_callback : function(field_name, url, type, win) {
                 var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;

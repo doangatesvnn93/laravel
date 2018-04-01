@@ -74,7 +74,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], '/admin/category/edit/{id}', ['as' => 'category-edit', 'uses' => 'Admin\CategoryController@edit']);
 //  Bill
     Route::post('/admin/bill/update', ['as' => 'bill-update', 'uses' => 'Admin\BillController@update']);
-
+    Route::get('/admin/comment/list', ['as' => 'comment-list', 'uses' => 'Admin\CommentController@list']);
 });
 
 Route::post('/add-to-cart', ['as' => 'add-to-cart', 'uses' => 'CartController@add']);
@@ -82,3 +82,5 @@ Route::post('/add-to-cart', ['as' => 'add-to-cart', 'uses' => 'CartController@ad
 Route::match(['get', 'post'], '/dat-hang', ['as' => 'checkout', 'uses' => 'PageController@checkout']);
 Route::match(['get', 'post'], '/subscribe', ['as' => 'subscribe', 'uses' => 'PageController@subscribe']);
 Route::get('/dang-ky-thanh-cong', ['as' => 'subscribed', 'uses' => 'PageController@subscribed']);
+Route::get('/tim-kiem', ['as' => 'search', 'uses' => 'PageController@search']);
+Route::post('comment', ['as' => 'comment', 'uses' => 'PageController@comment']);
