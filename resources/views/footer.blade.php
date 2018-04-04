@@ -6,9 +6,9 @@
                 <h2>Hotline hỗ trợ</h2>
                 <p class="desc">Gọi để được tư vấn về sản phẩm, dịch vụ:</p>
 
-                <p class="number"><span><a style="color:#ed1b2f;" href="tel:+84-1800-8001">1800 8001</a></span> &nbsp;(Miễn phí cho tất cả thuê bao)</p>
+                <p class="number"><span><a style="color:#ed1b2f;" href="tel:+84982007817" target="_blank">0982007817</a></span></p>
                 <div class="line"></div>
-                <p class="number"><a href="#popup-contact" title="" class="fancyboxContact"><span>cr@honda.com.vn</span></a></p>
+                <p class="number"><a href="#" title="" class="fancyboxContact"><span>phucntt@gmail.com</span></a></p>
             </div>
             <div class="rss newsletter">
                 <h2>Đăng ký nhận tin</h2>
@@ -36,10 +36,11 @@
                     <h4 class="widget-title">Sản phẩm</h4>
                     <div>
                         <ul>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Xe tay ga</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Xe số</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Xe côn tay</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Phụ kiện</a></li>
+                            @if ($listCategory)
+                                @foreach($listCategory as $cat)
+                                    <li><a href="{{ route('list') }}?cat={{ $cat->slug }}"><i class="fa fa-chevron-right"></i> {{ $cat->name }}</a></li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -50,11 +51,11 @@
                     <h4 class="widget-title">PHỤ TÙNG</h4>
                     <div>
                         <ul>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Phụ tùng chính hiệu</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Kiến thức phụ tùng</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Tin tức phụ tùng</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Trang phục</a></li>
-                            <li><a href="#"><i class="fa fa-chevron-right"></i> Mũ bảo hiểm</a></li>
+                            <li><a href="javascript: void(0);"><i class="fa fa-chevron-right"></i> Phụ tùng chính hiệu</a></li>
+                            <li><a href="javascript: void(0);"><i class="fa fa-chevron-right"></i> Kiến thức phụ tùng</a></li>
+                            <li><a href="javascript: void(0);"><i class="fa fa-chevron-right"></i> Tin tức phụ tùng</a></li>
+                            <li><a href="javascript: void(0);"><i class="fa fa-chevron-right"></i> Trang phục</a></li>
+                            <li><a href="javascript: void(0);"><i class="fa fa-chevron-right"></i> Mũ bảo hiểm</a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,8 +67,9 @@
                         <div>
                             <div class="contact-info">
                                 <i class="fa fa-map-marker"></i>
-                                <p>Level 19, 85 Vũ Trọng Phụng</p>
-                                <p>Phone: +84 164 651 8107</p>
+                                <p>SN 113 - Đường Lương Văn Thăng</p>
+                                <p>Phường Đông Thành - Ninh Bình</p>
+                                <p>Phone: <a href="tel:+84982007817" target="_blank">+84 982 007 817</a></p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +83,7 @@
     <div class="container">
         <p class="pull-left">Copyright. &copy; 2018</p>
         <p class="pull-right pay-options">
-            <a href="#"><img src="/themes/page/images/icons/facebook.png" alt="" /></a>
+            <a href="https://www.facebook.com/Honda-Th%E1%BA%AFng-Luy%C3%AAn-641673159370558/?locale2=vi_VN"><img src="/themes/page/images/icons/facebook.png" alt="" /></a>
             <a href="#"><img src="/themes/page/images/icons/youtube.png" alt="" /></a>
         </p>
         <div class="clearfix"></div>

@@ -82,9 +82,12 @@ class CategoryController extends \App\Http\Controllers\InitController
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   $request = request();
         $data = Category::where('id', $id)->first();
-        $request = request();
+        if (!$data) {
+            return redirect(route('404'));
+        }
+
         if ($request->isMethod('post')) {
             $name = $request->name ? $request->name : $data->name;
             $status = $request->status;

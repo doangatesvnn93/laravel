@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @section('title')
-    List - Comment
+    Danh sách - bình luận
 @endsection
 @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List Comment</h1>
+                <h1 class="page-header">Danh sách bình luận</h1>
             </div>
         </div>
         <div class="row">
@@ -15,10 +15,10 @@
                     <thead>
                     <tr>
                         <th width="30" class="text-center">#</th>
-                        <th class="text-center">Name</th>
-                        <th class="text-center">Product</th>
-                        <th class="text-center">Comment</th>
-                        <th class="text-center">Date Comment</th>
+                        <th class="text-center">Tên</th>
+                        <th class="text-center">Sản phẩm</th>
+                        <th class="text-center">Bình luận</th>
+                        <th class="text-center">Thời gian</th>
                     </tr>
                     </thead>
                     <tbody>

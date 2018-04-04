@@ -7,7 +7,7 @@
  */
 return [
     "dashboard" => array(
-        "title" => "Dashboard"
+        "title" => "Trang chủ"
     ),
     "sidebar" => array(
         "slide" => "Slide"

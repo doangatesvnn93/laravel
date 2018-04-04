@@ -1586,7 +1586,7 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
     6.3 BETA CART
 ============================================================================= */
 .cart {
-    border: 1px solid #e1e1e1;
+    border: 1px solid #fff;
     height: 37px;
     line-height: 37px;
     padding: 0 10px;
@@ -1613,12 +1613,15 @@ ul.sub-menu ul.sub-menu li:hover > a, ul.children ul.children li:hover > a {
 
 .cart-body {
     position: absolute;
-    right: 230px;
+    right: 0px;
     z-index: 100;
     background: #fff;
     border: 1px solid #e1e1e1;
     padding: 0 10px 10px;
     cursor: default;
+    width: 300px;
+    top: 40px;
+    color: #333;
 }
 
 .cart-item {
@@ -4371,6 +4374,12 @@ tfoot td a i {
     .history-navigation:before {
         background: none
     }
+    #footer {
+        margin-top: 20px;
+    }
+    .rev-slider {
+        margin-top: 50px;
+    }
 }
 
 @media (max-width: 993px) {
@@ -5590,7 +5599,7 @@ li.box-port-filter {
 }
 
 #logo {
-    padding-right: 7px;
+    position: relative;
 }
 
 .beta-highlight {

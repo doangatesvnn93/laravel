@@ -1,18 +1,18 @@
 @extends('layouts.admin')
 @section('title')
-    List - Category
+    Danh sách - Thể loại
 @endsection
 @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List</h1>
+                <h1 class="page-header">Danh sách</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-6 pdl-0">
-                    <a href="{{ route('category-create') }}" class="btn btn-success">Create</a>
+                    <a href="{{ route('category-create') }}" class="btn btn-success">Tạo mới</a>
                 </div>
                 <div class="col-sm-6 pdr-0">
                     <div class="text-right">{{ $listCategory->links() }}</div>
@@ -22,9 +22,9 @@
                     <thead>
                     <tr>
                         <th width="30" class="text-center">#</th>
-                        <th class="text-center">Name</th>
-                        <th class="text-center">Status</th>
-                        <th class="text-center">Action</th>
+                        <th class="text-center">Tên</th>
+                        <th class="text-center">Trạng thái</th>
+                        <th class="text-center">Hành động</th>
                     </tr>
                     </thead>
                     <tbody>

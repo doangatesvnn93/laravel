@@ -6,14 +6,25 @@
                     <ul class="top-menu menu-beta l-inline">
                         <li>
                             <div class="pull-left">
-                                <a href="{{route('landing')}}" id="logo"><img src="/themes/page/images/logo.png"
-                                                                              width="200px" alt=""></a>
+                                <a href="{{route('landing')}}" id="logo">
+                                    <div style="position:relative; width: 350px;">
+                                        <img src="/themes/page/images/thangluyen.png" width="500" alt="">
+                                    </div>
+                                </a>
                             </div>
+                            <div class="clearfix"></div>
                         </li>
                     </ul>
                 </div>
                 <div class="pull-right auto-width-right">
                     <ul class="top-details menu-beta l-inline">
+                        <li>
+                            <div class="contact-top">
+                                <a href="tel:+84982007817" target="_blank" style="padding-left: 15px;">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>+84 982 007 817
+                                </a>
+                            </div>
+                        </li>
                         <li>
                             <div class="form-search">
                                 <div class="beta-comp">
@@ -25,51 +36,7 @@
                                 <ul class="wrap-suggestion" style="display: none;"></ul>
                             </div>
                         </li>
-                        <li>
-                            <div class="beta-comp">
-                                <div class="cart">
-                                    <div class="beta-select">
-                                        <i class="fa fa-shopping-cart"></i> Giỏ hàng <span id="text-empty-cart">@if(!session()->has('cart'))
-                                                (Trống)</span> @endif
-                                        <i class="fa fa-chevron-down"></i>
-                                    </div>
 
-                                    <div class="@if (session()->has('cart') )beta-dropdown  cart-body @endif" id="cart-body">
-                                        @if (session()->has('cart'))
-                                            @php $totalAmount = 0; @endphp
-                                            @foreach(session()->get('cart') as $key => $item)
-                                                @php $totalAmount += $item['price'] * $item['qty']; @endphp
-                                                <div class="cart-item">
-                                                    <div class="media">
-                                                        <a class="pull-left" href="#"><img src="{{ $item['avatar'] }}"></a>
-                                                        <div class="media-body">
-                                                            <span class="cart-item-title">{{ $item['name'] }}</span>
-                                                            <span class="cart-item-options">Số lượng: {{ $item['qty'] }}</span>
-                                                            <span class="cart-item-amount">Số tiền : {{ number_format($item['price'] * $item['qty']) }}
-                                                                đ</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                            <div class="cart-caption">
-                                                <div class="cart-total text-right">Tổng tiền: <span
-                                                            class="cart-total-value">{{ number_format($totalAmount) }}
-                                                        đ</span></div>
-                                                <div class="clearfix"></div>
-
-                                                <div class="center">
-                                                    <div class="space10">&nbsp;</div>
-                                                    <a href="{{ route('checkout') }}"
-                                                       class="beta-btn primary text-center">
-                                                        Đặt hàng <i class="fa fa-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div> <!-- .cart -->
-                            </div>
-                        </li>
                         {{--<li><a href="#">Đăng nhập</a></li>--}}
                     </ul>
                 </div>
@@ -77,7 +44,7 @@
             </div> <!-- .container -->
         </div> <!-- .header-top -->
         <div class="header-bottom" style="background-color: #e6002c; text-transform: uppercase">
-            <div class="container">
+            <div class="container" style="position:relative;">
                 <a class="visible-xs beta-menu-toggle pull-right" href="#"><span
                             class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
                 <div class="visible-xs clearfix"></div>
@@ -119,6 +86,52 @@
                         <li><a href="{{ route('checkout') }}">Thanh toán</a></li>
                         <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                         <li><a href="{{ route('contact') }}">Liên hệ</a></li>
+                        <li><a href="{{ route('direct') }}">Chính sách giao hàng</a> </li>
+                        <li class="parent-cart">
+                            <div class="beta-comp">
+                                <div class="cart">
+                                    <div class="beta-select">
+                                        <i class="fa fa-shopping-cart"></i> Giỏ hàng <span id="text-empty-cart">@if(!session()->has('cart'))
+                                                (Trống)</span> @endif
+                                        <i class="fa fa-chevron-down"></i>
+                                    </div>
+
+                                    <div class="@if (session()->has('cart'))beta-dropdown  cart-body @endif" id="cart-body">
+                                        @if (session()->has('cart'))
+                                            @php $totalAmount = 0; @endphp
+                                            @foreach(session()->get('cart') as $key => $item)
+                                                @php $totalAmount += $item['price'] * $item['qty']; @endphp
+                                                <div class="cart-item">
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#"><img src="{{ $item['avatar'] }}"></a>
+                                                        <div class="media-body">
+                                                            <span class="cart-item-title">{{ $item['name'] }}</span>
+                                                            <span class="cart-item-options">Số lượng: {{ $item['qty'] }}</span>
+                                                            <span class="cart-item-amount">Số tiền : {{ number_format($item['price'] * $item['qty']) }}
+                                                                đ</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            <div class="cart-caption">
+                                                <div class="cart-total text-right">Tổng tiền: <span
+                                                            class="cart-total-value">{{ number_format($totalAmount) }}
+                                                        đ</span></div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="center">
+                                                    <div class="space10">&nbsp;</div>
+                                                    <a href="{{ route('checkout') }}"
+                                                       class="beta-btn btn-danger text-center btn-checkout">
+                                                        Đặt hàng <i class="fa fa-chevron-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div> <!-- .cart -->
+                            </div>
+                        </li>
                     </ul>
                     <div class="clearfix"></div>
                 </nav>
@@ -126,8 +139,8 @@
         </div> <!-- .header-bottom -->
     </div>
 </div>
-<div class="menu-mobile">
 
+<div class="menu-mobile">
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -137,7 +150,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('landing') }}"><img src="/themes/page/images/logo.png"> </a>
+                <a class="navbar-brand" href="{{ route('landing') }}">
+                    <img src="/themes/page/images/thangluyen.png" width="150">
+                </a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -154,7 +169,7 @@
                         <div class="clearfix"></div>
                     </li>
                     <li>
-                        <a href="{{ route('about') }}">Chính sách giao hàng</a>
+                        <a href="{{ route('direct') }}">Chính sách giao hàng</a>
                     </li>
                     <li>
                         <a href="{{ route('about') }}">Giới thiệu</a>

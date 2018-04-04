@@ -220,4 +220,9 @@ class PageController extends InitController
             }
         }
     }
+
+    public function direct()
+    {
+        return view('page.direct');
+    }
 }

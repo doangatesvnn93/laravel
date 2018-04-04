@@ -4,6 +4,6 @@
 @endsection
 @section('content')
     <div class="container">
-       <?php echo htmlspecialchars_decode($dataAboutUs->content); ?>
+        <?php echo htmlspecialchars_decode($dataDirectPolicy->content); ?>
     </div>
 @endsection

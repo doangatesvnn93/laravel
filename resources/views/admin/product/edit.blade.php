@@ -1,31 +1,31 @@
 @extends('layouts.admin')
 @section('title')
-    Edit-Slider
+    Sửa sản phẩm
 @endsection
 
 @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Product</h1>
+                <h1 class="page-header">Sửa sản phẩm</h1>
             </div>
         </div>
         <form method="post" action="{{ route('product-edit', array('id' => $data->id)) }}">
             <div class="col-sm-12 pd0">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#content1">Content</a></li>
-                    <li><a data-toggle="tab" href="#color1">Color</a></li>
+                    <li class="active"><a data-toggle="tab" href="#content1">Nội dung</a></li>
+                    <li><a data-toggle="tab" href="#color1">Màu sắc</a></li>
                 </ul>
 
                 <div class="tab-content">
                     <div id="content1" class="tab-pane fade in active">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Content
+                                Nội dung
                             </div>
                             <div class="panel-body">
                                 <div class="form-group">
-                                    <div class="col-sm-2"><p>Category</p></div>
+                                    <div class="col-sm-2"><p>Thể loại</p></div>
                                     <div class="col-sm-4">
                                         <div class="select-control">
                                             <select class="form-control" name="category_id">
@@ -35,7 +35,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-2">Name</div>
+                                    <div class="col-sm-2">Tên</div>
                                     <div class="col-sm-4">
                                         <input name="name" type="text" class="form-control" value="{{ $data->name }}" required>
                                     </div>
@@ -48,14 +48,14 @@
                                             <input class="form-control" name="price" value="{{ $data->price }}" required>
                                         </div>
                                     </div>
-                                    <div class="col-sm-2"><p>Avatar</p></div>
+                                    <div class="col-sm-2"><p>Ảnh đại diện</p></div>
                                     <div class="col-sm-4">
                                         <div class="select-control">
                                             <div class="input-group">
                                                 <input id="avatar" class="form-control" type="text" name="avatar" required value="{{ $data->avatar  }}">
                                                 <span class="input-group-btn">
                                                         <a data-input="avatar" data-preview="holder-avatar" class="btn btn-primary choose-file">
-                                                            <i class="fa fa-picture-o"></i> Choose
+                                                            <i class="fa fa-picture-o"></i> Chọn
                                                         </a>
                                                     </span>
                                             </div>
@@ -65,12 +65,12 @@
                                     <div class="clearbox"></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-2"><p>Status</p></div>
+                                    <div class="col-sm-2"><p>Trạng thái</p></div>
                                     <div class="col-sm-4">
                                         <div class="select-control">
                                             <select class="form-control" name="status">
-                                                <option value="1" @if($data->status == 1)selected @endif>Active</option>
-                                                <option value="0" @if($data->status == 0)selected @endif>Inactive</option>
+                                                <option value="1" @if($data->status == 1)selected @endif>Kích hoạt</option>
+                                                <option value="0" @if($data->status == 0)selected @endif>Chờ</option>
                                             </select>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                                                     <span class="input-group-btn">
                                                         <a data-input="thumbnail-0" data-preview="holder-color-0"
                                                            class="btn btn-primary choose-file">
-                                                            <i class="fa fa-picture-o"></i> Choose
+                                                            <i class="fa fa-picture-o"></i> Chọn
                                                         </a>
                                                     </span>
                                                 </div>
@@ -117,7 +117,7 @@
                                                     <span class="input-group-btn">
                                                          <a data-input="product-color-0" data-preview="holder-product-0"
                                                             class="btn btn-primary choose-file">
-                                                           <i class="fa fa-picture-o"></i> Choose
+                                                           <i class="fa fa-picture-o"></i> Chọn
                                                          </a>
                                                     </span>
                                                 </div>
@@ -145,7 +145,7 @@
             <div class="col-sm-12 mgb-20">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="text-center">
-                    <button type="submit" value="SUBMIT" class="btn btn-success">SUBMIT</button>
+                    <button type="submit" value="SUBMIT" class="btn btn-success">Lưu</button>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -184,7 +184,7 @@
                                         + '<input id="thumbnail-' + numberColor + '" class="form-control" type="text" name="color[]" value="' + data.color + '">'
                                         + '<span class="input-group-btn">'
                                             + '<a data-input="thumbnail-' + numberColor + '" data-preview="holder-color-' + numberColor + '" class="btn btn-primary choose-file">'
-                                                + '<i class="fa fa-picture-o"></i> Choose'
+                                                + '<i class="fa fa-picture-o"></i> Chọn'
                                             + '</a>'
                                         + '</span>'
                                     + '</div>'
@@ -198,7 +198,7 @@
                                         + '<input id="product-color-' + numberColor + '" class="form-control" type="text" name="productColor[]" value="' + data.product + '">'
                                         + '<span class="input-group-btn">'
                                             + '<a data-input="product-color-' + numberColor + '" data-preview="holder-product-' + numberColor + '" class="btn btn-primary choose-file">'
-                                                + '<i class="fa fa-picture-o"></i> Choose'
+                                                + '<i class="fa fa-picture-o"></i> Chọn'
                                             + '</a>'
                                         + '</span>'
                                     + '</div>'

@@ -15,7 +15,10 @@ Route::get('/', [
     'as' => 'landing',
     'uses' => 'PageController@index'
 ]);
-
+Route::get('/home', [
+    'as' => 'home',
+    'uses' => 'PageController@index'
+]);
 Route::get('index', [
     'as' => 'index',
     'uses' => 'PageController@index'
@@ -75,6 +78,9 @@ Route::group(['middleware' => 'auth'], function () {
 //  Bill
     Route::post('/admin/bill/update', ['as' => 'bill-update', 'uses' => 'Admin\BillController@update']);
     Route::get('/admin/comment/list', ['as' => 'comment-list', 'uses' => 'Admin\CommentController@list']);
+//  Article
+    Route::match(['get', 'post'], '/admin/article/create', ['as' => 'article-create', 'uses' => 'Admin\ArticleController@create']);
+    Route::match(['get', 'post'], '/admin/article/edit/{id}', ['as' => 'article-edit', 'uses' => 'Admin\ArticleController@edit']);
 });
 
 Route::post('/add-to-cart', ['as' => 'add-to-cart', 'uses' => 'CartController@add']);
@@ -84,3 +90,4 @@ Route::match(['get', 'post'], '/subscribe', ['as' => 'subscribe', 'uses' => 'Pag
 Route::get('/dang-ky-thanh-cong', ['as' => 'subscribed', 'uses' => 'PageController@subscribed']);
 Route::get('/tim-kiem', ['as' => 'search', 'uses' => 'PageController@search']);
 Route::post('comment', ['as' => 'comment', 'uses' => 'PageController@comment']);
+Route::get('chinh-sach-giao-hang', ['as' => 'direct', 'uses' => 'PageController@direct']);

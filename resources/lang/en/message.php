@@ -8,7 +8,7 @@
 return [
     "title" => "this is title gates",
     "admin" => array(
-        "title" => "Dashboard"
+        "title" => "Trang chủ"
     ),
     "commons" => array(
         "successfully" => "Successfully"

@@ -349,6 +349,7 @@
 .main-menu > ul.l-inline > li > a {
     color: #fff;
     padding: 13px 35px 15px 35px;
+    background: url(/themes/page/images/menu-fence.png) no-repeat right center;
 }
 
 .main-menu > ul.l-inline > li {
@@ -362,7 +363,17 @@
 
 #logo img {
     padding-left: 20px;
-    padding-right: 20px;
+    /*padding-right: 20px;*/
+}
+
+#text-logo {
+    position: absolute;
+    right: 55px;
+    top: 13px;
+    color: #de182e;
+    font-weight: 900;
+    font-size: 15px;
+    padding-bottom: 10px;
 }
 
 #searchform #s {
@@ -423,7 +434,7 @@ i.icons.icon-sright-up {
 
 @media only screen and (max-width: 1440px) {
     .cart-body {
-        right: 115px;
+        right: 0px;
     }
 }
 
@@ -489,3 +500,92 @@ i.icons.icon-sright-up {
     }
 }
 
+@media only screen and (max-width: 361px) {
+    #text-logo {
+        right: 120px;
+        top: 19px;
+        font-size: 14px;
+    }
+
+    .navbar-brand img {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    #text-logo {
+        right: 155px;
+        top: 20px;
+        font-size: 14px;
+    }
+
+    .navbar-brand img {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #text-logo {
+        right: 155px;
+        top: 20px;
+        font-size: 14px;
+    }
+
+    .navbar-brand img {
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .navbar-brand {
+        width: 80%;
+    }
+}
+.contact-top, .contact-top a {
+    color: #eb1c24;
+    font-weight: 600;
+    padding: 10px;
+}
+.contact-top i {
+    color: #eb1c24 !important;
+    font-size: 16px;
+    margin-right: -3px !important;
+}
+.parent-cart {
+    position: absolute !important;
+    color: #fff;
+    background: #eb1c24;
+    border: #eb1c24;
+    border-radius: 0 0 5px 5px;
+    right: 24px;
+    top: 7px;
+}
+.parent-cart i {
+    color: #fff !important;
+}
+.cart-body .btn-checkout{
+    color: #fff;
+    background: #d2322d;
+    border: 1px solid #ac2925;
+}
+.parent-cart:hover {
+    color: #fff;
+}
+#telephone-fixed {
+    display: none;
+}
+#telephone-fixed i{
+    color: #fff;
+    font-size: 22px;
+}
+@media only screen and (max-width: 1024px) {
+    #telephone-fixed {
+        display: block;
+        position: fixed;
+        bottom: 85px;
+        right: 5px;
+        background: red;
+        border-radius: 50%;
+        padding: 10px;
+        z-index: 999;
+    }
+}

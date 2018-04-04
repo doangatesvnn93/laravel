@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('pageTitle') - Website bán xe máy</title>
+    <title>@yield('pageTitle') - Honda Thắng Luyên</title>
     <link rel="shortcut icon" type="image/png" href="/themes/page/images/favicon.png"/>
-    <meta name="description" content="Website bán xe máy Honda">
+    <meta name="description" content="Honda Thắng Luyên">
     <meta name="keywords" content="honda,xemay,xetayga,xeso,phukienxemay">
     <meta name="author" content="DoanGates | 01646518107">
     <base hrer="{{asset('')}}">
@@ -26,16 +26,19 @@
 </head>
 <body id="show-sp">
 <div id="social-right-fixed">
-    <a href="https://facebook.com/doangates" target="_blank"><i class="icons icon-sright-fb"></i></a>
+    <a href="https://www.facebook.com/Honda-Th%E1%BA%AFng-Luy%C3%AAn-641673159370558/?locale2=vi_VN" target="_blank"><i class="icons icon-sright-fb"></i></a>
     <a href="javascript:void(0)" target="_blank"><i class="icons icon-sright-yo"></i></a>
-    <a href="mailto:doangatesvnn93@gmail.com" target="_blank"><i class="icons icon-sright-mail"></i></a>
-    <a href="tel:+841646518107" target="_blank"><i class="icons icon-sright-tel"></i></a>
+    <a href="mailto:phucntt@gmail.com" target="_blank"><i class="icons icon-sright-mail"></i></a>
+    <a href="tel:+84982007817" target="_blank"><i class="icons icon-sright-tel"></i></a>
     <a href="javascript: gotoTop();" target="_blank"><i class="icons icon-sright-up"></i></a>
 </div>
 <div id="cart-fixed" onclick="location.href='{{ route('checkout') }}'" @if (!session('cart'))style="display: none" @endif>
     <img src="/themes/page/images/icon_cart_fixed.png" alt="">
     <a href="{{ route('checkout') }}">Giỏ hàng của bạn</a>
 </div>
+<a id="telephone-fixed" href="tel:+84982007817">
+    <i class="fa fa-phone" aria-hidden="true"></i>
+</a>
 <!-- #header -->
 @include('header')
 <!-- #end header -->
@@ -118,6 +121,7 @@
                             + '</div>';
 
                     jQuery('#cart-body').addClass('beta-dropdown  cart-body').html(html);
+                    jQuery('#cart-fixed').show();
                     commons.alertFlashMessage('success', 'Đã thêm vào giỏ hàng');
                 } else {
                     commons.alertFlashMessage('fail', 'Có lỗi xảy ra');

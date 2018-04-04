@@ -26,7 +26,7 @@ class ProductController extends \App\Http\Controllers\InitController
      */
     public function list()
     {
-        $listProduct = Product::where('status', '<>', null)->paginate(10);
+        $listProduct = Product::where('status', '<>', null)->orderBy('id', 'DESC')->paginate(10);
         return view('admin.product.list', array('listProduct' => $listProduct));
     }
 
@@ -102,6 +102,9 @@ class ProductController extends \App\Http\Controllers\InitController
     {
         $request = request();
         $data = Product::where('id', $id)->first();
+        if (!$data) {
+            return redirect(route('404'));
+        }
         if ($request->isMethod('post')) {
             $categoryId = $request->category_id;
             $name = $request->name;

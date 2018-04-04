@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Article;
 use App\Category;
 use App\Product;
 use App\Slide;
@@ -13,7 +14,12 @@ class InitController extends Controller
         $listSlide = Slide::all();
         $listProduct = Product::get();
         $listCategory = Category::get();
-
+        $dataContact = Article::where('id', 2)->first();
+        $dataAboutUs = Article::where('id', 1)->first();
+        $dataDirectPolicy = Article::where('id', 3)->first();
+        view()->share('dataDirectPolicy', $dataDirectPolicy);
+        view()->share('dataContact', $dataContact);
+        view()->share('dataAboutUs', $dataAboutUs);
         view()->share('listProduct', $listProduct);
         view()->share('listCategory', $listCategory);
     }
