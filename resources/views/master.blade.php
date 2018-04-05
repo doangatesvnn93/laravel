@@ -116,7 +116,7 @@
 
                                 + '<div class="center">'
                                     + '<div class="space10">&nbsp;</div>'
-                                    + '<a href="{{ route('checkout') }}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>'
+                                    + '<a href="{{ route('checkout') }}" class="beta-btn btn-danger text-center btn-checkout">Đặt hàng <i class="fa fa-chevron-right"></i></a>'
                                 + '</div>'
                             + '</div>';
 

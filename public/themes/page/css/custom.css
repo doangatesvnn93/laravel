@@ -556,7 +556,7 @@ i.icons.icon-sright-up {
     background: #eb1c24;
     border: #eb1c24;
     border-radius: 0 0 5px 5px;
-    right: 24px;
+    right: 230px;
     top: 7px;
 }
 .parent-cart i {
@@ -587,5 +587,15 @@ i.icons.icon-sright-up {
         border-radius: 50%;
         padding: 10px;
         z-index: 999;
+    }
+}
+@media only screen and (max-width: 1480px) {
+    .parent-cart {
+        right: 115px;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .parent-cart {
+        right: 63px;
     }
 }

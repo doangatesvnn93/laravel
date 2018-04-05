@@ -43,8 +43,8 @@
                 <div class="clearfix"></div>
             </div> <!-- .container -->
         </div> <!-- .header-top -->
-        <div class="header-bottom" style="background-color: #e6002c; text-transform: uppercase">
-            <div class="container" style="position:relative;">
+        <div class="header-bottom" style="background-color: #e6002c; text-transform: uppercase;position: relative">
+            <div class="container">
                 <a class="visible-xs beta-menu-toggle pull-right" href="#"><span
                             class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
                 <div class="visible-xs clearfix"></div>
