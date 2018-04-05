@@ -158,7 +158,7 @@
                     Không có sản phẩm nào trong giỏ hàng
                     <a href="{{ route('landing') }}" class="buyother">Về trang chủ</a>
                     <div class="callship">
-                        Khi cần trợ giúp vui lòng gọi <a href="tel:01646518107">0164.651.8107</a> (7h30 - 22h)
+                        Khi cần trợ giúp vui lòng gọi <a href="tel:+84982007817">0982.007.817</a> (7h30 - 22h)
                     </div>
                 </div>
             @endif
