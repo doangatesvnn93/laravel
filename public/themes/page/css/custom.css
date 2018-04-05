@@ -581,7 +581,7 @@ i.icons.icon-sright-up {
     #telephone-fixed {
         display: block;
         position: fixed;
-        bottom: 85px;
+        bottom: 30px;
         right: 5px;
         background: red;
         border-radius: 50%;
