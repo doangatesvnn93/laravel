@@ -25,6 +25,12 @@
     @yield('styleHeader')
 </head>
 <body id="show-sp">
+<!-- #header -->
+@include('header')
+<!-- #end header -->
+<div class="rev-slider" ng-app="myApp" ng-controller="myCtrl">
+    @yield('content')
+</div>
 <div id="social-right-fixed">
     <a href="https://www.facebook.com/Honda-Th%E1%BA%AFng-Luy%C3%AAn-641673159370558/?locale2=vi_VN" target="_blank"><i class="icons icon-sright-fb"></i></a>
     <a href="javascript:void(0)" target="_blank"><i class="icons icon-sright-yo"></i></a>
@@ -39,12 +45,6 @@
 <a id="telephone-fixed" href="tel:+84982007817">
     <i class="fa fa-phone" aria-hidden="true"></i>
 </a>
-<!-- #header -->
-@include('header')
-<!-- #end header -->
-<div class="rev-slider" ng-app="myApp" ng-controller="myCtrl">
-    @yield('content')
-</div>
 @include('footer')
 
 
