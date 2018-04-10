@@ -577,6 +577,31 @@ i.icons.icon-sright-up {
     color: #fff;
     font-size: 22px;
 }
+.bx-wrapper img {
+    width: 100%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#myCarousel i {
+    position: absolute;
+    top: 50%;
+    font-size: 28px;
+    z-index: 9999;
+}
+#myCarousel .carousel-indicators {
+    z-index: 9999;
+}
+#myCarousel .carousel-indicators .active {
+    background: #ed1b2f;
+}
+#myCarousel .carousel-control.right, #myCarousel .carousel-control.left {
+    background: none;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+    height: 500px;
+}
 @media only screen and (max-width: 1024px) {
     #telephone-fixed {
         display: block;
@@ -587,6 +612,9 @@ i.icons.icon-sright-up {
         border-radius: 50%;
         padding: 10px;
         z-index: 999;
+    }
+    .bx-wrapper img {
+        height: 160px;
     }
 }
 @media only screen and (max-width: 1480px) {

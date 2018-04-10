@@ -4,10 +4,45 @@ Trang chủ
 @endsection
 @section('content')
     <div id="show-sp-pc">
-        <div class="slider">
-            @foreach($listSlide as $slide)
-                <div><img src="{{ $slide->link }}"> </div>
-            @endforeach
+        {{--<div class="slider">--}}
+            {{--@if ($listSlide)--}}
+                {{--@foreach($listSlide as $key => $slide)--}}
+                    {{--<div><img src="{{ $slide->link }}"> </div>--}}
+                {{--@endforeach--}}
+            {{--@endif--}}
+        {{--</div>--}}
+        <div class="">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @if ($listSlide)
+                        @foreach($listSlide as $key => $slide)
+                            <li data-target="#myCarousel" data-slide-to="{{ $key }}" class="@if ($key == 0) active @endif"></li>
+                        @endforeach
+                    @endif
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    @if ($listSlide)
+                        @foreach($listSlide as $key => $slide)
+                            <div class="item @if ($key == 0) active @endif">
+                                <img src="{{ $slide->link }}" alt="{{ $slide->name }}" style="width:100%;">
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
         <div class="container">
             <div id="content" class="space-top-none">
@@ -214,6 +249,8 @@ Trang chủ
             prevText: '<i class="fa fa-chevron-left"></i>',
             controls: true
         });
+        jQuery('.slider div').css('width', 'auto');
+        jQuery('#myCarousel').carousel()
     });
     var wHeight = $( window ).height();
     jQuery(document).on('click', '#ga-mb-menu-icon', function() {
