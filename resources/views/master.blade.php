@@ -6,7 +6,7 @@
     <title>@yield('pageTitle') - Honda Thắng Luyên</title>
     <link rel="shortcut icon" type="image/png" href="/themes/page/images/favicon.png"/>
     <meta name="description" content="Honda Thắng Luyên">
-    <meta name="keywords" content="honda,xemay,xetayga,xeso,phukienxemay">
+    <meta name="keywords" content="honda,xemay,xetayga,xeso,phukienxemay,thangluyen,hondathangluyen,hondathangluyenninhbinh">
     <meta name="author" content="DoanGates | 01646518107">
     <base hrer="{{asset('')}}">
     <link href='https://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
