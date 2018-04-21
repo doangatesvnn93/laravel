@@ -161,6 +161,20 @@ class ProductController extends \App\Http\Controllers\InitController
      */
     public function destroy($id)
     {
-        //
+        $request = request();
+        $response = array(
+            'status' => 'RESULT_NOT_OK',
+            'message' => 'Update fail'
+        );
+        if ($request->isMethod('post')) {
+            $article = Product::where('id', $id)->first();
+            if ($article) {
+                Product::where('id', $article->id)->delete();
+                $response['status'] = 'RESULT_OK';
+                $response['message'] = 'Update Successfully';
+                $this->setFlashData();
+            }
+            return response($response);
+        }
     }
 }

@@ -44,7 +44,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="javascript: void(0);" class="destroy btn btn-danger">
+                                <a href="javascript: void(0);" class="destroy btn btn-danger" data-url="{{ route('product-delete', array('id' => $product->id)) }}" data-id="{{ $product->id }}">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>

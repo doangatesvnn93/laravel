@@ -110,6 +110,32 @@
         $('.alert-message').hide();
     }, 1000);
     @endif
+    jQuery(document).ready(function () {
+        jQuery(document).on('click', '.destroy', function () {
+            var id = jQuery(this).attr('data-id'),
+                url = jQuery(this).attr('data-url');
+            if (id && url) {
+                commons.confirmDialog.show('Are you sure?', 'Are you sure', function () {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: {
+                            id: id,
+                            '_token': '{{ csrf_token() }}'
+                        },
+                        success: function (response) {
+                            if (response.status == 'RESULT_OK') {
+                                commons.alertFlashMessage('success', response.message);
+                                setTimeout(function () {
+                                    commons.refresh();
+                                }, 2000);
+                            }
+                        }
+                    })
+                });
+            }
+        })
+    });
 </script>
 @yield('styleFooter')
 

@@ -70,6 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], '/admin/product/create', ['as' => 'product-create', 'uses' => 'Admin\ProductController@create']);
     Route::get('/admin/product/list', ['as' => 'product-list', 'uses' => 'Admin\ProductController@list']);
     Route::match(['get', 'post'], '/admin/product/edit/{id}', ['as' => 'product-edit', 'uses' => 'Admin\ProductController@edit']);
+    Route::match(['get', 'post'], '/admin/product/destroy/{id}', ['as' => 'product-delete', 'uses' => 'Admin\ProductController@destroy']);
 
 //  Category
     Route::get('/admin/category/list', ['as' => 'category-list', 'uses' => 'Admin\CategoryController@list']);
