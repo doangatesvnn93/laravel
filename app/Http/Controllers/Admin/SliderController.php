@@ -116,6 +116,20 @@ class SliderController extends \App\Http\Controllers\InitController
      */
     public function destroy($id)
     {
-        //
+        $request = request();
+        $response = array(
+            'status' => 'RESULT_NOT_OK',
+            'message' => 'Update fail'
+        );
+        if ($request->isMethod('post')) {
+            $article = Slide::where('id', $id)->first();
+            if ($article) {
+                Slide::where('id', $article->id)->delete();
+                $response['status'] = 'RESULT_OK';
+                $response['message'] = 'Update Successfully';
+                $this->setFlashData();
+            }
+            return response($response);
+        }
     }
 }

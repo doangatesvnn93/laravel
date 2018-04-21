@@ -128,7 +128,7 @@
                                 commons.alertFlashMessage('success', response.message);
                                 setTimeout(function () {
                                     commons.refresh();
-                                }, 2000);
+                                }, 1000);
                             }
                         }
                     })

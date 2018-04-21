@@ -136,7 +136,7 @@ class ProductController extends \App\Http\Controllers\InitController
                 )
             );
             $this->setFlashData('success', 'Successfully!');
-            redirect(route('product-edit', $data));
+            return redirect(route('product-edit', $data));
         }
         return view('admin.product.edit', array('data' => $data));
     }

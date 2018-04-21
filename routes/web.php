@@ -66,6 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], '/admin/slider/create', ['as' => 'slider-create', 'uses' => 'Admin\SliderController@create']);
     Route::get('/admin/slider/list', ['as' => 'slider-list', 'uses' => 'Admin\SliderController@list']);
     Route::match(['get', 'post'], '/admin/slider/edit/{id}', ['as' => 'slider-edit', 'uses' => 'Admin\SliderController@edit']);
+    Route::match(['get', 'post'], '/admin/slider/destroy/{id}', ['as' => 'slider-delete', 'uses' => 'Admin\SliderController@destroy']);
 //  Products
     Route::match(['get', 'post'], '/admin/product/create', ['as' => 'product-create', 'uses' => 'Admin\ProductController@create']);
     Route::get('/admin/product/list', ['as' => 'product-list', 'uses' => 'Admin\ProductController@list']);
