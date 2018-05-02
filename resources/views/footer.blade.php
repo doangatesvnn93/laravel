@@ -6,9 +6,9 @@
                 <h2>Hotline hỗ trợ</h2>
                 <p class="desc">Gọi để được tư vấn về sản phẩm, dịch vụ:</p>
 
-                <p class="number"><span><a style="color:#ed1b2f;" href="tel:+84982007817" target="_blank">0982007817</a></span></p>
+                <p class="number"><span><a style="color:#ed1b2f;" href="tel:{{ $dataWebsiteConfig->phone }}" target="_blank">{{ $dataWebsiteConfig->phone }}</a></span></p>
                 <div class="line"></div>
-                <p class="number"><a href="#" title="" class="fancyboxContact"><span>phucntt@gmail.com</span></a></p>
+                <p class="number"><a href="mailto:{{ $dataWebsiteConfig->email }}" title="" class="fancyboxContact"><span>{{ $dataWebsiteConfig->email }}</span></a></p>
             </div>
             <div class="rss newsletter">
                 <h2>Đăng ký nhận tin</h2>
@@ -67,9 +67,8 @@
                         <div>
                             <div class="contact-info">
                                 <i class="fa fa-map-marker"></i>
-                                <p>SN 113 - Đường Lương Văn Thăng</p>
-                                <p>Phường Đông Thành - Ninh Bình</p>
-                                <p>Phone: <a href="tel:+84982007817" target="_blank">+84 982 007 817</a></p>
+                                {{ $dataWebsiteConfig->address }}
+                                <p>Phone: <a href="tel:{{ $dataWebsiteConfig->phone }}" target="_blank">{{ $dataWebsiteConfig->phone }}</a></p>
                             </div>
                         </div>
                     </div>

@@ -130,6 +130,7 @@ class PageController extends InitController
                     'data'          => json_encode($dataBill),
                     'type_payment'  => $typePayment
                 ));
+                \App\Http\Controllers\MailController::send('checkout');
                 $this->setFlashData('success', 'Đơn hàng của bạn đã được lưu');
                 session()->remove('cart');
             }
@@ -211,6 +212,7 @@ class PageController extends InitController
                         'username'   => $username
                     );
                     Comment::create($data);
+                    \App\Http\Controllers\MailController::send('comment');
                     $data['created_at'] = date('Y-m-d H:i:s:');
                     $data['count_comment'] = Comment::where('product_id', $productId)->count();
                     $response['status'] = 'RESULT_OK';

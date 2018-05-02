@@ -138,8 +138,8 @@
                                         <label for="payment_method_cheque">Chuyển khoản </label>
                                         <div class="payment_box payment_method_cheque" style="display: none;">
                                             Chuyển tiền đến tài khoản sau:
-                                            <br>- Số tài khoản: <b>123766148</b>
-                                            <br>- Chủ TK: <b>Nguyễn Văn Đoàn - Ngân hàng VPBank, Chi nhánh Đông Đô</b>
+                                            <br>- Số tài khoản: <b>{{ $dataWebsiteConfig->card_number }}</b>
+                                            <br>- Chủ TK: <b>{{ $dataWebsiteConfig->bank }}</b>
                                         </div>
                                     </li>
 
@@ -158,7 +158,7 @@
                     Không có sản phẩm nào trong giỏ hàng
                     <a href="{{ route('landing') }}" class="buyother">Về trang chủ</a>
                     <div class="callship">
-                        Khi cần trợ giúp vui lòng gọi <a href="tel:+84982007817">0982.007.817</a> (7h30 - 22h)
+                        Khi cần trợ giúp vui lòng gọi <a href="tel:{{ $dataWebsiteConfig->phone }}">{{ $dataWebsiteConfig->phone }}</a> (7h30 - 22h)
                     </div>
                 </div>
             @endif

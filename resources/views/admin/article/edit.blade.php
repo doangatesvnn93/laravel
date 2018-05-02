@@ -21,7 +21,7 @@
                             <div class="col-sm-6">
                                 <div class="col-sm-2">Tên</div>
                                 <div class="col-sm-10">
-                                    <input name="name" class="form-control" required value="{{ $data->name }}" >
+                                    <input name="name" class="form-control" required value="{{ $data->name }}">
                                 </div>
                             </div>
                         </div>

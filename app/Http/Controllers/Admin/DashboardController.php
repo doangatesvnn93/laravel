@@ -12,7 +12,7 @@ class DashboardController extends \App\Http\Controllers\InitController
 {
     public function overview()
     {
-        $billData = Bill::where('status', 0)->get();
+        $billData = Bill::where('status', 0)->orderBy('id', 'desc')->get();
         $data = array(
             'billData' => $billData
         );

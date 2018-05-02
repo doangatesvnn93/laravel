@@ -52,7 +52,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $item->type_payment }}</td>
-                                <td>{{ date('d-m-Y'), strtotime($item->created_at) }}</td>
+                                <td>{{ date('d-m-Y H:i:s', strtotime($item->created_at)) }}</td>
                                 <td>{{ $item->phone }}</td>
                                 <td style="text-transform: capitalize;">{{ $item->gender }}</td>
                                 <td>{{ $item->email }}</td>

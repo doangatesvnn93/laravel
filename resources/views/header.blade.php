@@ -20,8 +20,8 @@
                     <ul class="top-details menu-beta l-inline">
                         <li>
                             <div class="contact-top">
-                                <a href="tel:+84982007817" target="_blank" style="padding-left: 15px;">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>+84 982 007 817
+                                <a href="tel:{{ $dataWebsiteConfig->phone }}" target="_blank" style="padding-left: 15px;">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>{{ $dataWebsiteConfig->phone }}
                                 </a>
                             </div>
                         </li>

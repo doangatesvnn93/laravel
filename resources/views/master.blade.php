@@ -34,8 +34,8 @@
 <div id="social-right-fixed">
     <a href="https://www.facebook.com/Honda-Th%E1%BA%AFng-Luy%C3%AAn-641673159370558/?locale2=vi_VN" target="_blank"><i class="icons icon-sright-fb"></i></a>
     <a href="javascript:void(0)" target="_blank"><i class="icons icon-sright-yo"></i></a>
-    <a href="mailto:phucntt@gmail.com" target="_blank"><i class="icons icon-sright-mail"></i></a>
-    <a href="tel:+84982007817" target="_blank"><i class="icons icon-sright-tel"></i></a>
+    <a href="mailto:{{ $dataWebsiteConfig->email }}" target="_blank"><i class="icons icon-sright-mail"></i></a>
+    <a href="tel:{{ $dataWebsiteConfig->phone }}" target="_blank"><i class="icons icon-sright-tel"></i></a>
     <a href="javascript: gotoTop();" target="_blank"><i class="icons icon-sright-up"></i></a>
 </div>
 <div id="cart-fixed" onclick="location.href='{{ route('checkout') }}'" @if (!session('cart'))style="display: none" @endif>

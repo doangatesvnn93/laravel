@@ -14,6 +14,7 @@ class CommentController extends Controller
         $listComment = DB::table('g_comment')
             ->join('g_products', 'g_comment.product_id', '=', 'g_products.id')
             ->select('g_comment.username', 'g_comment.comment', 'g_comment.created_at', 'g_products.name', 'g_products.slug')
+            ->orderBy('g_comment.id', 'desc')
             ->get();
         $data = array(
             'listComment' => $listComment

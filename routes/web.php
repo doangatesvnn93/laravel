@@ -77,16 +77,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/category/list', ['as' => 'category-list', 'uses' => 'Admin\CategoryController@list']);
     Route::match(['get', 'post'], '/admin/category/create', ['as' => 'category-create', 'uses' => 'Admin\CategoryController@create']);
     Route::match(['get', 'post'], '/admin/category/edit/{id}', ['as' => 'category-edit', 'uses' => 'Admin\CategoryController@edit']);
+    Route::match(['get', 'post'], '/admin/category/destroy/{id}', ['as' => 'category-delete', 'uses' => 'Admin\CategoryController@destroy']);
 //  Bill
     Route::post('/admin/bill/update', ['as' => 'bill-update', 'uses' => 'Admin\BillController@update']);
     Route::get('/admin/comment/list', ['as' => 'comment-list', 'uses' => 'Admin\CommentController@list']);
 //  Article
     Route::match(['get', 'post'], '/admin/article/create', ['as' => 'article-create', 'uses' => 'Admin\ArticleController@create']);
     Route::match(['get', 'post'], '/admin/article/edit/{id}', ['as' => 'article-edit', 'uses' => 'Admin\ArticleController@edit']);
+
+    Route::match(['get', 'post'], '/admin/websiteconfig/create', ['as' => 'websiteconfig-create', 'uses' => 'Admin\WebsiteconfigController@create']);
+    Route::get('/admin/websiteconfig/list', ['as' => 'websiteconfig-list', 'uses' => 'Admin\WebsiteconfigController@list']);
+    Route::match(['get', 'post'], '/admin/websiteconfig/edit/{id}', ['as' => 'websiteconfig-edit', 'uses' => 'Admin\WebsiteconfigController@edit']);
 });
 
 Route::post('/add-to-cart', ['as' => 'add-to-cart', 'uses' => 'CartController@add']);
-//Route::get('clear', ['as' => '/clear-session', 'uses' => 'CartController@clearCart']);
+Route::match(['get', 'post'], '/send-email', ['as' => 'send-email', 'uses' => 'MailController@send']);
 Route::match(['get', 'post'], '/dat-hang', ['as' => 'checkout', 'uses' => 'PageController@checkout']);
 Route::match(['get', 'post'], '/subscribe', ['as' => 'subscribe', 'uses' => 'PageController@subscribe']);
 Route::get('/dang-ky-thanh-cong', ['as' => 'subscribed', 'uses' => 'PageController@subscribed']);

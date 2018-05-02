@@ -128,6 +128,20 @@ class CategoryController extends \App\Http\Controllers\InitController
      */
     public function destroy($id)
     {
-        //
+        $request = request();
+        $response = array(
+            'status' => 'RESULT_NOT_OK',
+            'message' => 'Update fail'
+        );
+        if ($request->isMethod('post')) {
+            $article = Category::where('id', $id)->first();
+            if ($article) {
+                Category::where('id', $article->id)->delete();
+                $response['status'] = 'RESULT_OK';
+                $response['message'] = 'Update Successfully';
+                $this->setFlashData();
+            }
+            return response($response);
+        }
     }
 }

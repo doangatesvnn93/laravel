@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use App\Article;
 use App\Category;
+use App\Http\Controllers\Admin\WebsiteconfigController;
 use App\Product;
 use App\Slide;
+use App\WebsiteConfig;
 use Illuminate\Http\Request;
 
 class InitController extends Controller
@@ -17,6 +19,10 @@ class InitController extends Controller
         $dataContact = Article::where('id', 2)->first();
         $dataAboutUs = Article::where('id', 1)->first();
         $dataDirectPolicy = Article::where('id', 3)->first();
+        $dataWebsiteConfig = WebsiteConfig::first();
+        $dataWebsiteConfig = json_decode($dataWebsiteConfig->content);
+
+        view()->share('dataWebsiteConfig', $dataWebsiteConfig);
         view()->share('dataDirectPolicy', $dataDirectPolicy);
         view()->share('dataContact', $dataContact);
         view()->share('dataAboutUs', $dataAboutUs);

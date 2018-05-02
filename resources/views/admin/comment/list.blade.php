@@ -29,7 +29,7 @@
                                 <td class="text-center">{{ $comment->username }}</td>
                                 <td class="text-center"><a href="{{ route('detail', array('slug' => $comment->slug)) }}">{{ $comment->name }}</a></td>
                                 <td class="text-center">{{ $comment->comment }}</td>
-                                <td class="text-center">{{ date('Y-m-d H:i:s', strtotime($comment->created_at)) }}</td>
+                                <td class="text-center">{{ date('d-m-Y H:i:s', strtotime($comment->created_at)) }}</td>
                             </tr>
                         @endforeach
                     @endif
