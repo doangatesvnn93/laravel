@@ -170,26 +170,17 @@ Trang chủ
         <div id="testimonial">
             <div class="container"><h3>Nhận xét của khách hàng</h3>
                 <div class="row">
-                    <div class="col-md-4" style="padding-bottom: 30px"><p>Tôi rất hài lòng với sự hỗ trợ của Mr. Lâm
-                            đã giúp tôi lựa chọn được chiếc xe ưng ý.</p> <img style="border-radius: 50px"
-                                                                               src="https://toyotalongbien3s.com/wp-content/themes/ford/images/khach-hang-1.jpg"
-                                                                               alt="Nội dung" class="lazyloading"
-                                                                               data-was-processed="true"> Đỗ Tiến
-                        Khởi
+                    <div class="col-md-4" style="padding-bottom: 30px">
+                        <p>Tôi rất hài lòng với sự hỗ trợ của Mr. Lâm đã giúp tôi lựa chọn được chiếc xe ưng ý.</p>
+                        <img style="border-radius: 50px" src="/themes/page/images/clients/kh1.jpg" alt="Nội dung" class="lazyloading" data-was-processed="true"> Đỗ Tiến Khởi
                     </div>
-                    <div class="col-md-4" style="padding-bottom: 30px"><p>Chị đánh giá em rất nhiệt tình, chúc em ký
-                            được nhiều hợp đồng hơn nữa.</p> <img style="border-radius: 50px"
-                                                                  src="https://toyotalongbien3s.com/wp-content/themes/ford/images/khach-hang-2.jpg"
-                                                                  alt="Nội dung" class="lazyloading"
-                                                                  data-was-processed="true"> Vân Lee
+                    <div class="col-md-4" style="padding-bottom: 30px">
+                        <p>Chị đánh giá em rất nhiệt tình, chúc em ký được nhiều hợp đồng hơn nữa.</p>
+                        <img style="border-radius: 50px" src="/themes/page/images/clients/kh2.jpg" alt="Nội dung" class="lazyloading" data-was-processed="true"> Vân Lee
                     </div>
-                    <div class="col-md-4" style="padding-bottom: 30px"><p>Chúc cháu thành công. Nếu bạn bè người
-                            quen mua nhất định chú sẽ giới thiệu cho cháu.</p> <img style="border-radius: 50px"
-                                                                                    src="https://toyotalongbien3s.com/wp-content/themes/ford/images/khach-hang-3.jpg"
-                                                                                    alt="Nội dung"
-                                                                                    class="lazyloading"
-                                                                                    data-was-processed="true">
-                        Nguyễn Hiển
+                    <div class="col-md-4" style="padding-bottom: 30px">
+                        <p>Chúc cháu thành công. Nếu bạn bè người quen mua nhất định chú sẽ giới thiệu cho cháu.</p>
+                        <img style="border-radius: 50px" src="/themes/page/images/clients/kh3.jpg" alt="Nội dung" class="lazyloading" data-was-processed="true">Nguyễn Hiển
                     </div>
                 </div>
             </div>

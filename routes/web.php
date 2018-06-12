@@ -88,6 +88,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], '/admin/websiteconfig/create', ['as' => 'websiteconfig-create', 'uses' => 'Admin\WebsiteconfigController@create']);
     Route::get('/admin/websiteconfig/list', ['as' => 'websiteconfig-list', 'uses' => 'Admin\WebsiteconfigController@list']);
     Route::match(['get', 'post'], '/admin/websiteconfig/edit/{id}', ['as' => 'websiteconfig-edit', 'uses' => 'Admin\WebsiteconfigController@edit']);
+
+    Route::get('subscribe-list', ['as' => 'subscribe-list', 'uses' => 'Admin\DashboardController@subscribe']);
 });
 
 Route::post('/add-to-cart', ['as' => 'add-to-cart', 'uses' => 'CartController@add']);

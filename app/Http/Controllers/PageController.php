@@ -144,7 +144,9 @@ class PageController extends InitController
             $data = array(
                 'status' => 'RESULT_OK'
             );
+
             if ($request->email) {
+                \App\Http\Controllers\MailController::send('subscribe');
                 Subscribe::create(
                     array(
                         'email' => $request->email,

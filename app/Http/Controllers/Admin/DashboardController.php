@@ -7,6 +7,7 @@
  */
 namespace App\Http\Controllers\Admin;
 use App\Bill;
+use App\Subscribe;
 
 class DashboardController extends \App\Http\Controllers\InitController
 {
@@ -17,6 +18,12 @@ class DashboardController extends \App\Http\Controllers\InitController
             'billData' => $billData
         );
         return view('admin.index', $data);
+    }
+
+    public function subscribe()
+    {
+        $data = Subscribe::paginate(10);
+        return view('admin.subscribe.index', array('data' => $data));
     }
 
 }

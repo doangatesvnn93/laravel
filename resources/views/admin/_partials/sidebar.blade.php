@@ -11,6 +11,9 @@
                 <a href="{{ route('slider-list') }}"><i class="fa fa-table fa-fw"></i> {{trans('admin.sidebar.slide')}}</a>
             </li>
             <li>
+                <a href="{{ route('subscribe-list') }}"><i class="fa fa-table fa-fw"></i> Subscribe</a>
+            </li>
+            <li>
                 <a href="{{ route('product-list') }}"><i class="fa fa-edit fa-fw"></i> Sản phẩm</a>
             </li>
             <li>
